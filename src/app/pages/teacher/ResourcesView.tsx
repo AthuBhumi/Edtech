@@ -22,27 +22,27 @@ export const ResourcesView: React.FC = () => {
   return (
     <div className="p-4 lg:p-6">
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           Teaching Resources 📚
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">Manage your teaching materials and resources</p>
+        <p className="text-slate-500 text-sm lg:text-base">Manage your teaching materials and resources</p>
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mb-6">
         {categories.map((category, idx) => (
           <div key={idx} className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
             <category.icon className="w-6 h-6 lg:w-8 lg:h-8 mb-3" style={{ color: category.color }} />
-            <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>
+            <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>
               {category.count}
             </p>
-            <p className="text-xs text-white/60">{category.name}</p>
+            <p className="text-xs text-slate-500">{category.name}</p>
           </div>
         ))}
       </div>
 
       <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg lg:text-xl font-semibold text-white">Recent Resources</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800">Recent Resources</h2>
           <Button className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm">
             Upload New
           </Button>
@@ -63,8 +63,8 @@ export const ResourcesView: React.FC = () => {
                     {resource.type === 'link' && <LinkIcon className="w-5 h-5 text-[#7C3AED]" />}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-white font-semibold text-sm lg:text-base mb-1 truncate">{resource.title}</h3>
-                    <p className="text-xs text-white/60">
+                    <h3 className="text-slate-800 font-semibold text-sm lg:text-base mb-1 truncate">{resource.title}</h3>
+                    <p className="text-xs text-slate-500">
                       {resource.subject} • {resource.size} • {resource.downloads} downloads
                     </p>
                   </div>

@@ -98,20 +98,20 @@ export const AIInsightsView: React.FC = () => {
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-2">
           <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-gradient-to-br from-[#06B6D4] via-[#2563EB] to-[#7C3AED] flex items-center justify-center">
-            <Sparkles className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+            <Sparkles className="w-5 h-5 lg:w-6 lg:h-6 text-slate-800" />
           </div>
           <div>
-            <h1 className="text-2xl lg:text-3xl font-bold text-white" style={{ fontFamily: 'var(--font-display)' }}>
+            <h1 className="text-2xl lg:text-3xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-display)' }}>
               ARIA Insights
             </h1>
-            <p className="text-white/60 text-sm lg:text-base">AI-powered analytics and recommendations</p>
+            <p className="text-slate-500 text-sm lg:text-base">AI-powered analytics and recommendations</p>
           </div>
         </div>
       </div>
 
       {/* Priority Insights */}
       <div className="mb-6">
-        <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Priority Insights 🎯</h2>
+        <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Priority Insights 🎯</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
           {insights.map((insight, idx) => (
             <div key={idx} className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
@@ -121,14 +121,14 @@ export const AIInsightsView: React.FC = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-2 mb-2">
-                    <h3 className="text-white font-semibold text-sm lg:text-base">{insight.title}</h3>
+                    <h3 className="text-slate-800 font-semibold text-sm lg:text-base">{insight.title}</h3>
                     <Badge className={`${
                       insight.priority === 'high' ? 'bg-[#F43F5E]/20 text-[#F43F5E]' : 'bg-[#F59E0B]/20 text-[#F59E0B]'
                     } border-none text-xs flex-shrink-0`}>
                       {insight.priority}
                     </Badge>
                   </div>
-                  <p className="text-sm text-white/70 mb-3">{insight.description}</p>
+                  <p className="text-sm text-slate-600 mb-3">{insight.description}</p>
                   <Button size="sm" className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs h-8">
                     {insight.action}
                   </Button>
@@ -142,14 +142,14 @@ export const AIInsightsView: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-6">
         {/* AI Predictions */}
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">AI Predictions 🔮</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">AI Predictions 🔮</h2>
           <div className="space-y-4">
             {predictions.map((pred, idx) => (
               <div key={idx} className="glass-card rounded-xl p-4">
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex-1">
-                    <h4 className="text-white font-semibold text-sm mb-1">{pred.title}</h4>
-                    <p className="text-xs text-white/70">{pred.description}</p>
+                    <h4 className="text-slate-800 font-semibold text-sm mb-1">{pred.title}</h4>
+                    <p className="text-xs text-slate-600">{pred.description}</p>
                   </div>
                   <Badge className="bg-[#10B981]/20 text-[#10B981] border-none text-xs ml-2">
                     <TrendingUp className="w-3 h-3 mr-1" />
@@ -158,8 +158,8 @@ export const AIInsightsView: React.FC = () => {
                 </div>
                 <div>
                   <div className="flex justify-between mb-1 text-xs">
-                    <span className="text-white/60">Confidence</span>
-                    <span className="text-white font-semibold">{pred.confidence}%</span>
+                    <span className="text-slate-500">Confidence</span>
+                    <span className="text-slate-800 font-semibold">{pred.confidence}%</span>
                   </div>
                   <Progress value={pred.confidence} className="h-2" />
                 </div>
@@ -170,35 +170,35 @@ export const AIInsightsView: React.FC = () => {
 
         {/* Quick Stats */}
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">ARIA Analytics Summary</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">ARIA Analytics Summary</h2>
           <div className="space-y-4">
             <div className="glass-card rounded-xl p-4">
               <div className="flex items-center gap-3 mb-2">
                 <Users className="w-5 h-5 text-[#2563EB]" />
-                <span className="text-white font-semibold text-sm">Student Performance</span>
+                <span className="text-slate-800 font-semibold text-sm">Student Performance</span>
               </div>
-              <p className="text-2xl font-bold text-white mb-1" style={{ fontFamily: 'var(--font-mono)' }}>87.4%</p>
-              <p className="text-xs text-white/60">Average across all classes</p>
+              <p className="text-2xl font-bold text-slate-800 mb-1" style={{ fontFamily: 'var(--font-mono)' }}>87.4%</p>
+              <p className="text-xs text-slate-500">Average across all classes</p>
               <Progress value={87} className="h-2 mt-2" />
             </div>
 
             <div className="glass-card rounded-xl p-4">
               <div className="flex items-center gap-3 mb-2">
                 <BookOpen className="w-5 h-5 text-[#10B981]" />
-                <span className="text-white font-semibold text-sm">Syllabus Completion</span>
+                <span className="text-slate-800 font-semibold text-sm">Syllabus Completion</span>
               </div>
-              <p className="text-2xl font-bold text-white mb-1" style={{ fontFamily: 'var(--font-mono)' }}>83.2%</p>
-              <p className="text-xs text-white/60">On track for year-end</p>
+              <p className="text-2xl font-bold text-slate-800 mb-1" style={{ fontFamily: 'var(--font-mono)' }}>83.2%</p>
+              <p className="text-xs text-slate-500">On track for year-end</p>
               <Progress value={83} className="h-2 mt-2" />
             </div>
 
             <div className="glass-card rounded-xl p-4">
               <div className="flex items-center gap-3 mb-2">
                 <Award className="w-5 h-5 text-[#F59E0B]" />
-                <span className="text-white font-semibold text-sm">Teacher Effectiveness</span>
+                <span className="text-slate-800 font-semibold text-sm">Teacher Effectiveness</span>
               </div>
-              <p className="text-2xl font-bold text-white mb-1" style={{ fontFamily: 'var(--font-mono)' }}>93.5%</p>
-              <p className="text-xs text-white/60">Based on student feedback</p>
+              <p className="text-2xl font-bold text-slate-800 mb-1" style={{ fontFamily: 'var(--font-mono)' }}>93.5%</p>
+              <p className="text-xs text-slate-500">Based on student feedback</p>
               <Progress value={94} className="h-2 mt-2" />
             </div>
           </div>
@@ -207,17 +207,17 @@ export const AIInsightsView: React.FC = () => {
 
       {/* Recommendations */}
       <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-        <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">ARIA Recommendations 💡</h2>
+        <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">ARIA Recommendations 💡</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
           {recommendations.map((rec, idx) => (
             <div key={idx} className="glass-card rounded-xl p-4">
-              <h3 className="text-white font-semibold mb-3 flex items-center gap-2">
+              <h3 className="text-slate-800 font-semibold mb-3 flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-[#06B6D4]" />
                 {rec.category}
               </h3>
               <ul className="space-y-2">
                 {rec.items.map((item, itemIdx) => (
-                  <li key={itemIdx} className="text-sm text-white/70 flex items-start gap-2">
+                  <li key={itemIdx} className="text-sm text-slate-600 flex items-start gap-2">
                     <span className="text-[#06B6D4] flex-shrink-0 mt-1">•</span>
                     <span>{item}</span>
                   </li>

@@ -33,26 +33,26 @@ export const ProgressView: React.FC = () => {
   return (
     <div className="p-4 lg:p-6">
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           Academic Progress 📈
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">Track your children's performance over time</p>
+        <p className="text-slate-500 text-sm lg:text-base">Track your children's performance over time</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-6">
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg font-semibold text-white mb-4">Arjun's Progress (Class 8B)</h2>
+          <h2 className="text-lg font-semibold text-slate-800 mb-4">Arjun's Progress (Class 8B)</h2>
           <ResponsiveContainer width="100%" height={250}>
             <LineChart data={arjunProgress}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
               <XAxis dataKey="month" stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <YAxis stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: '#111827', 
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  backgroundColor: '#FFFFFF', 
+                  border: '1px solid #E2E8F0',
                   borderRadius: '8px',
-                  color: '#fff'
+                  color: '#1E293B'
                 }} 
               />
               <Line type="monotone" dataKey="score" stroke="#2563EB" strokeWidth={2} dot={{ fill: '#2563EB' }} />
@@ -61,18 +61,18 @@ export const ProgressView: React.FC = () => {
         </div>
 
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg font-semibold text-white mb-4">Priya's Progress (Class 6A)</h2>
+          <h2 className="text-lg font-semibold text-slate-800 mb-4">Priya's Progress (Class 6A)</h2>
           <ResponsiveContainer width="100%" height={250}>
             <LineChart data={priyaProgress}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
               <XAxis dataKey="month" stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <YAxis stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: '#111827', 
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  backgroundColor: '#FFFFFF', 
+                  border: '1px solid #E2E8F0',
                   borderRadius: '8px',
-                  color: '#fff'
+                  color: '#1E293B'
                 }} 
               />
               <Line type="monotone" dataKey="score" stroke="#10B981" strokeWidth={2} dot={{ fill: '#10B981' }} />
@@ -82,18 +82,18 @@ export const ProgressView: React.FC = () => {
       </div>
 
       <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6 mb-6">
-        <h2 className="text-lg font-semibold text-white mb-4">Subject-wise Comparison</h2>
+        <h2 className="text-lg font-semibold text-slate-800 mb-4">Subject-wise Comparison</h2>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={subjectComparison}>
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+            <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
             <XAxis dataKey="subject" stroke="#9CA3AF" tick={{ fontSize: 12 }} />
             <YAxis stroke="#9CA3AF" tick={{ fontSize: 12 }} />
             <Tooltip 
               contentStyle={{ 
-                backgroundColor: '#111827', 
-                border: '1px solid rgba(255,255,255,0.1)',
+                backgroundColor: '#FFFFFF', 
+                border: '1px solid #E2E8F0',
                 borderRadius: '8px',
-                color: '#fff'
+                color: '#1E293B'
               }} 
             />
             <Bar dataKey="arjun" fill="#2563EB" radius={[8, 8, 0, 0]} name="Arjun" />
@@ -104,18 +104,18 @@ export const ProgressView: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg font-semibold text-white mb-4">Arjun's Areas</h2>
+          <h2 className="text-lg font-semibold text-slate-800 mb-4">Arjun's Areas</h2>
           <div className="space-y-4">
             <div>
               <div className="flex justify-between mb-2">
-                <span className="text-sm text-white">Strong: Science</span>
+                <span className="text-sm text-slate-800">Strong: Science</span>
                 <Badge className="bg-[#10B981]/20 text-[#10B981] border-none text-xs">92%</Badge>
               </div>
               <Progress value={92} className="h-2" />
             </div>
             <div>
               <div className="flex justify-between mb-2">
-                <span className="text-sm text-white">Needs Improvement: Hindi</span>
+                <span className="text-sm text-slate-800">Needs Improvement: Hindi</span>
                 <Badge className="bg-[#F59E0B]/20 text-[#F59E0B] border-none text-xs">79%</Badge>
               </div>
               <Progress value={79} className="h-2" />
@@ -124,18 +124,18 @@ export const ProgressView: React.FC = () => {
         </div>
 
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg font-semibold text-white mb-4">Priya's Areas</h2>
+          <h2 className="text-lg font-semibold text-slate-800 mb-4">Priya's Areas</h2>
           <div className="space-y-4">
             <div>
               <div className="flex justify-between mb-2">
-                <span className="text-sm text-white">Strong: Science</span>
+                <span className="text-sm text-slate-800">Strong: Science</span>
                 <Badge className="bg-[#10B981]/20 text-[#10B981] border-none text-xs">95%</Badge>
               </div>
               <Progress value={95} className="h-2" />
             </div>
             <div>
               <div className="flex justify-between mb-2">
-                <span className="text-sm text-white">Improving: Hindi</span>
+                <span className="text-sm text-slate-800">Improving: Hindi</span>
                 <Badge className="bg-[#2563EB]/20 text-[#2563EB] border-none text-xs">85%</Badge>
               </div>
               <Progress value={85} className="h-2" />

@@ -54,13 +54,13 @@ export const AIInsightsView: React.FC = () => {
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-2">
           <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-gradient-to-br from-[#06B6D4] via-[#2563EB] to-[#7C3AED] flex items-center justify-center">
-            <Sparkles className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+            <Sparkles className="w-5 h-5 lg:w-6 lg:h-6 text-slate-800" />
           </div>
           <div>
-            <h1 className="text-2xl lg:text-3xl font-bold text-white" style={{ fontFamily: 'var(--font-display)' }}>
+            <h1 className="text-2xl lg:text-3xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-display)' }}>
               ARIA Insights
             </h1>
-            <p className="text-white/60 text-sm lg:text-base">Personalized teaching recommendations</p>
+            <p className="text-slate-500 text-sm lg:text-base">Personalized teaching recommendations</p>
           </div>
         </div>
       </div>
@@ -74,18 +74,18 @@ export const AIInsightsView: React.FC = () => {
               </div>
               <div className="flex-1">
                 <div className="flex items-start justify-between gap-2 mb-2">
-                  <h3 className="text-white font-semibold text-base">{insight.title}</h3>
+                  <h3 className="text-slate-800 font-semibold text-base">{insight.title}</h3>
                   <Badge className={`${
                     insight.priority === 'high' ? 'bg-[#F43F5E]/20 text-[#F43F5E]' : 'bg-[#F59E0B]/20 text-[#F59E0B]'
                   } border-none text-xs`}>
                     {insight.priority}
                   </Badge>
                 </div>
-                <p className="text-sm text-white/70 mb-3">{insight.description}</p>
+                <p className="text-sm text-slate-600 mb-3">{insight.description}</p>
                 {insight.students && (
                   <div className="mb-3">
                     {insight.students.map((student, sIdx) => (
-                      <Badge key={sIdx} className="bg-white/10 text-white border-none text-xs mr-2 mb-2">
+                      <Badge key={sIdx} className="bg-slate-100 text-slate-800 border-none text-xs mr-2 mb-2">
                         {student}
                       </Badge>
                     ))}
@@ -102,24 +102,24 @@ export const AIInsightsView: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg font-semibold text-white mb-4">Student Recommendations 🎯</h2>
+          <h2 className="text-lg font-semibold text-slate-800 mb-4">Student Recommendations 🎯</h2>
           <div className="space-y-3">
             {studentRecommendations.map((rec, idx) => (
               <div key={idx} className="glass-card rounded-xl p-4">
                 <div className="mb-3">
-                  <h4 className="text-white font-semibold text-sm mb-1">{rec.name}</h4>
-                  <p className="text-xs text-white/60">Class {rec.class}</p>
+                  <h4 className="text-slate-800 font-semibold text-sm mb-1">{rec.name}</h4>
+                  <p className="text-xs text-slate-500">Class {rec.class}</p>
                 </div>
-                <p className="text-sm text-white/80 mb-2">
+                <p className="text-sm text-slate-700 mb-2">
                   <span className="text-[#F59E0B]">Issue:</span> {rec.issue}
                 </p>
-                <p className="text-sm text-white/80 mb-3">
+                <p className="text-sm text-slate-700 mb-3">
                   <span className="text-[#10B981]">Recommendation:</span> {rec.action}
                 </p>
                 <div>
                   <div className="flex justify-between mb-1 text-xs">
-                    <span className="text-white/60">AI Confidence</span>
-                    <span className="text-white">{rec.confidence}%</span>
+                    <span className="text-slate-500">AI Confidence</span>
+                    <span className="text-slate-800">{rec.confidence}%</span>
                   </div>
                   <Progress value={rec.confidence} className="h-2" />
                 </div>
@@ -129,12 +129,12 @@ export const AIInsightsView: React.FC = () => {
         </div>
 
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg font-semibold text-white mb-4">Teaching Tips 💡</h2>
+          <h2 className="text-lg font-semibold text-slate-800 mb-4">Teaching Tips 💡</h2>
           <div className="space-y-3">
             {teachingTips.map((tip, idx) => (
               <div key={idx} className="glass-card rounded-xl p-4 flex items-start gap-3">
                 <Sparkles className="w-5 h-5 text-[#06B6D4] flex-shrink-0 mt-0.5" />
-                <p className="text-sm text-white/80">{tip}</p>
+                <p className="text-sm text-slate-700">{tip}</p>
               </div>
             ))}
           </div>

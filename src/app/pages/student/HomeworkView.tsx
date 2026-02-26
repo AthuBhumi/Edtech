@@ -91,38 +91,38 @@ export const HomeworkView: React.FC = () => {
     <div className="p-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           Homework & Assignments 📝
         </h1>
-        <p className="text-white/60">Track your assignments and stay organized</p>
+        <p className="text-slate-500">Track your assignments and stay organized</p>
       </div>
 
       {/* Quick Stats */}
       <div className="grid grid-cols-4 gap-4 mb-6">
         <div className="glass-card rounded-2xl p-6">
           <AlertCircle className="w-8 h-8 text-[#F43F5E] mb-3" />
-          <p className="text-sm text-white/60 mb-1">Pending</p>
-          <p className="text-3xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>{totalPending}</p>
+          <p className="text-sm text-slate-500 mb-1">Pending</p>
+          <p className="text-3xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>{totalPending}</p>
         </div>
 
         <div className="glass-card rounded-2xl p-6">
           <Clock className="w-8 h-8 text-[#F59E0B] mb-3" />
-          <p className="text-sm text-white/60 mb-1">Due Soon</p>
-          <p className="text-3xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>2</p>
-          <p className="text-xs text-white/40 mt-1">Next 24 hours</p>
+          <p className="text-sm text-slate-500 mb-1">Due Soon</p>
+          <p className="text-3xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>2</p>
+          <p className="text-xs text-slate-400 mt-1">Next 24 hours</p>
         </div>
 
         <div className="glass-card rounded-2xl p-6">
           <CheckCircle className="w-8 h-8 text-[#10B981] mb-3" />
-          <p className="text-sm text-white/60 mb-1">Completed</p>
-          <p className="text-3xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>{homework.completed.length}</p>
-          <p className="text-xs text-white/40 mt-1">This week</p>
+          <p className="text-sm text-slate-500 mb-1">Completed</p>
+          <p className="text-3xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>{homework.completed.length}</p>
+          <p className="text-xs text-slate-400 mt-1">This week</p>
         </div>
 
         <div className="glass-card rounded-2xl p-6">
           <FileText className="w-8 h-8 text-[#2563EB] mb-3" />
-          <p className="text-sm text-white/60 mb-1">Completion Rate</p>
-          <p className="text-3xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>{completionRate}%</p>
+          <p className="text-sm text-slate-500 mb-1">Completion Rate</p>
+          <p className="text-3xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>{completionRate}%</p>
           <Progress value={completionRate} className="mt-2 h-1" />
         </div>
       </div>
@@ -131,7 +131,7 @@ export const HomeworkView: React.FC = () => {
         {/* Pending Homework */}
         <div className="col-span-2">
           <div className="glass-card rounded-2xl p-6 mb-6">
-            <h2 className="text-xl font-semibold text-white mb-4">Pending Homework</h2>
+            <h2 className="text-xl font-semibold text-slate-800 mb-4">Pending Homework</h2>
             <div className="space-y-3">
               {homework.pending.map((item) => {
                 const isUrgent = item.priority === 'high';
@@ -160,15 +160,15 @@ export const HomeworkView: React.FC = () => {
 
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
-                            <h3 className="text-white font-semibold">{item.subject}</h3>
+                            <h3 className="text-slate-800 font-semibold">{item.subject}</h3>
                             {isUrgent && (
                               <Badge className="bg-[#F43F5E]/20 text-[#F43F5E] border-none text-xs">
                                 High Priority
                               </Badge>
                             )}
                           </div>
-                          <p className="text-white/80 text-sm mb-2">{item.title}</p>
-                          <div className="flex items-center gap-4 text-xs text-white/60">
+                          <p className="text-slate-700 text-sm mb-2">{item.title}</p>
+                          <div className="flex items-center gap-4 text-xs text-slate-500">
                             <div className="flex items-center gap-1">
                               <Calendar className="w-3 h-3" />
                               Due: {item.dueDate} at {item.dueTime}
@@ -199,7 +199,7 @@ export const HomeworkView: React.FC = () => {
 
           {/* Completed Homework */}
           <div className="glass-card rounded-2xl p-6">
-            <h2 className="text-xl font-semibold text-white mb-4">Recently Completed</h2>
+            <h2 className="text-xl font-semibold text-slate-800 mb-4">Recently Completed</h2>
             <div className="space-y-3">
               {homework.completed.map((item) => (
                 <div key={item.id} className="glass-card rounded-xl p-4">
@@ -210,12 +210,12 @@ export const HomeworkView: React.FC = () => {
                       </div>
 
                       <div className="flex-1">
-                        <h3 className="text-white font-semibold mb-1">{item.subject}</h3>
-                        <p className="text-white/70 text-sm mb-2">{item.title}</p>
-                        <p className="text-xs text-white/60">Submitted: {item.submittedDate}</p>
+                        <h3 className="text-slate-800 font-semibold mb-1">{item.subject}</h3>
+                        <p className="text-slate-600 text-sm mb-2">{item.title}</p>
+                        <p className="text-xs text-slate-500">Submitted: {item.submittedDate}</p>
                         {item.feedback && (
-                          <div className="mt-2 bg-white/5 rounded-lg p-2">
-                            <p className="text-xs text-white/80">💬 {item.feedback}</p>
+                          <div className="mt-2 bg-slate-50 rounded-lg p-2">
+                            <p className="text-xs text-slate-700">💬 {item.feedback}</p>
                           </div>
                         )}
                       </div>
@@ -239,13 +239,13 @@ export const HomeworkView: React.FC = () => {
         <div>
           {/* Weekly Progress */}
           <div className="glass-card rounded-2xl p-6 mb-6">
-            <h2 className="text-xl font-semibold text-white mb-4">This Week</h2>
+            <h2 className="text-xl font-semibold text-slate-800 mb-4">This Week</h2>
             <div className="space-y-4">
               {weeklyProgress.map((day, idx) => (
                 <div key={idx}>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-white">{day.day}</span>
-                    <span className="text-sm text-white/60">{day.completed}/{day.total}</span>
+                    <span className="text-sm text-slate-800">{day.day}</span>
+                    <span className="text-sm text-slate-500">{day.completed}/{day.total}</span>
                   </div>
                   <Progress 
                     value={(day.completed / day.total) * 100} 
@@ -258,28 +258,28 @@ export const HomeworkView: React.FC = () => {
 
           {/* ARIA Study Tips */}
           <div className="glass-card rounded-2xl p-6">
-            <h2 className="text-xl font-semibold text-white mb-4">ARIA Study Tips</h2>
+            <h2 className="text-xl font-semibold text-slate-800 mb-4">ARIA Study Tips</h2>
             <div className="space-y-3">
               <div className="bg-[#F43F5E]/10 border border-[#F43F5E]/20 rounded-xl p-4">
-                <p className="text-sm text-white/90">
+                <p className="text-sm text-slate-800">
                   🚨 2 assignments due in next 24 hours! Prioritize Math and Science.
                 </p>
               </div>
 
               <div className="bg-[#2563EB]/10 border border-[#2563EB]/20 rounded-xl p-4">
-                <p className="text-sm text-white/90">
+                <p className="text-sm text-slate-800">
                   💡 Best study time for you: 4-6 PM. You're 30% more productive then!
                 </p>
               </div>
 
               <div className="bg-[#10B981]/10 border border-[#10B981]/20 rounded-xl p-4">
-                <p className="text-sm text-white/90">
+                <p className="text-sm text-slate-800">
                   ⭐ Great job! Your submission rate is 85% this month.
                 </p>
               </div>
 
               <div className="bg-[#F59E0B]/10 border border-[#F59E0B]/20 rounded-xl p-4">
-                <p className="text-sm text-white/90">
+                <p className="text-sm text-slate-800">
                   📚 English essay due soon. I can help you brainstorm ideas!
                 </p>
                 <Button size="sm" className="w-full mt-3 bg-[#F59E0B] hover:bg-[#D97706] text-white">

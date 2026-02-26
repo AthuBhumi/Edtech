@@ -154,15 +154,15 @@ export const Login: React.FC = () => {
           </h1>
           <p className="text-lg text-white/70 mb-12">AI-powered school management for the next generation</p>
           <div className="flex flex-wrap gap-4 mb-12">
-            <div className="glass-card rounded-full px-6 py-3 flex items-center gap-2">
+            <div className="dark-glass rounded-full px-6 py-3 flex items-center gap-2">
               <Users className="w-5 h-5 text-[#06B6D4]" />
               <span className="text-white text-sm font-medium">4 Smart Roles</span>
             </div>
-            <div className="glass-card rounded-full px-6 py-3 flex items-center gap-2">
+            <div className="dark-glass rounded-full px-6 py-3 flex items-center gap-2">
               <AriaOrb size="sm" animated={false} />
               <span className="text-white text-sm font-medium">ARIA AI Assistant</span>
             </div>
-            <div className="glass-card rounded-full px-6 py-3 flex items-center gap-2">
+            <div className="dark-glass rounded-full px-6 py-3 flex items-center gap-2">
               <Zap className="w-5 h-5 text-[#F59E0B]" />
               <span className="text-white text-sm font-medium">Real-time Everything</span>
             </div>
@@ -170,7 +170,7 @@ export const Login: React.FC = () => {
         </div>
 
         {/* Testimonial */}
-        <div className="relative z-10 glass-card rounded-2xl p-6 max-w-md">
+        <div className="relative z-10 dark-glass rounded-2xl p-6 max-w-md">
           <div className="flex gap-4">
             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex-shrink-0" />
             <div>
@@ -198,8 +198,7 @@ export const Login: React.FC = () => {
 
         {/* Form Card */}
         <div
-          className="relative z-10 w-full max-w-md glass-card rounded-3xl p-8"
-          style={{ backdropFilter: 'blur(24px)', border: '1px solid rgba(255,255,255,0.12)' }}
+          className="relative z-10 w-full max-w-md dark-glass rounded-3xl p-8"
         >
           {/* Header + mode toggle */}
           <div className="mb-6">
@@ -236,7 +235,7 @@ export const Login: React.FC = () => {
                 <button
                   key={role.value}
                   onClick={() => setSelectedRole(role.value)}
-                  className={`p-3 rounded-xl flex flex-col items-center gap-1.5 transition-all ${isSelected ? 'text-white shadow-lg' : 'glass-card text-white/60 hover:text-white hover:bg-white/10'
+                  className={`p-3 rounded-xl flex flex-col items-center gap-1.5 transition-all ${isSelected ? 'text-white shadow-lg' : 'dark-glass text-white/60 hover:text-white hover:bg-white/10'
                     }`}
                   style={isSelected ? { background: role.color, boxShadow: `0 0 16px ${role.color}40` } : {}}
                 >
@@ -367,7 +366,7 @@ export const Login: React.FC = () => {
             variant="outline"
             onClick={handleGoogleSignIn}
             disabled={isGoogleLoading}
-            className="w-full h-11 glass-card border-white/10 text-white hover:bg-white/10 disabled:opacity-50"
+            className="w-full h-11 dark-glass border-white/10 text-white hover:bg-white/10 disabled:opacity-50"
           >
             {isGoogleLoading ? (
               <div className="flex items-center gap-2">

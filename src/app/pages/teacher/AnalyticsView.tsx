@@ -36,38 +36,38 @@ export const AnalyticsView: React.FC = () => {
   return (
     <div className="p-4 lg:p-6">
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           Teaching Analytics 📈
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">Insights into your teaching performance</p>
+        <p className="text-slate-500 text-sm lg:text-base">Insights into your teaching performance</p>
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mb-6">
         {stats.map((stat, idx) => (
           <div key={idx} className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
             <stat.icon className="w-6 h-6 lg:w-8 lg:h-8 mb-3" style={{ color: stat.color }} />
-            <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>
+            <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>
               {stat.value}
             </p>
-            <p className="text-xs text-white/60">{stat.label}</p>
+            <p className="text-xs text-slate-500">{stat.label}</p>
           </div>
         ))}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-6">
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Attendance Trend</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Attendance Trend</h2>
           <ResponsiveContainer width="100%" height={250}>
             <LineChart data={attendanceData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
               <XAxis dataKey="month" stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <YAxis stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: '#111827', 
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  backgroundColor: '#FFFFFF', 
+                  border: '1px solid #E2E8F0',
                   borderRadius: '8px',
-                  color: '#fff'
+                  color: '#1E293B'
                 }} 
               />
               <Line type="monotone" dataKey="rate" stroke="#10B981" strokeWidth={2} dot={{ fill: '#10B981' }} />
@@ -76,18 +76,18 @@ export const AnalyticsView: React.FC = () => {
         </div>
 
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Class Performance</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Class Performance</h2>
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={performanceData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
               <XAxis dataKey="class" stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <YAxis stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: '#111827', 
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  backgroundColor: '#FFFFFF', 
+                  border: '1px solid #E2E8F0',
                   borderRadius: '8px',
-                  color: '#fff'
+                  color: '#1E293B'
                 }} 
               />
               <Bar dataKey="avg" fill="#2563EB" radius={[8, 8, 0, 0]} />
@@ -97,7 +97,7 @@ export const AnalyticsView: React.FC = () => {
       </div>
 
       <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-        <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Subject-wise Performance</h2>
+        <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Subject-wise Performance</h2>
         <div className="flex justify-center">
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
@@ -117,10 +117,10 @@ export const AnalyticsView: React.FC = () => {
               </Pie>
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: '#111827', 
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  backgroundColor: '#FFFFFF', 
+                  border: '1px solid #E2E8F0',
                   borderRadius: '8px',
-                  color: '#fff'
+                  color: '#1E293B'
                 }} 
               />
             </PieChart>

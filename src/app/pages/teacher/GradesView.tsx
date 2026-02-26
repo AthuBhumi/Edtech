@@ -26,39 +26,39 @@ export const GradesView: React.FC = () => {
   return (
     <div className="p-4 lg:p-6">
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           Grade Management 📊
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">View and manage student grades</p>
+        <p className="text-slate-500 text-sm lg:text-base">View and manage student grades</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <Award className="w-6 h-6 lg:w-8 lg:h-8 text-[#10B981] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>87.4%</p>
-          <p className="text-xs text-white/60">Class Average</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>87.4%</p>
+          <p className="text-xs text-slate-500">Class Average</p>
         </div>
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <TrendingUp className="w-6 h-6 lg:w-8 lg:h-8 text-[#2563EB] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>+5.2%</p>
-          <p className="text-xs text-white/60">Improvement</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>+5.2%</p>
+          <p className="text-xs text-slate-500">Improvement</p>
         </div>
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <Users className="w-6 h-6 lg:w-8 lg:h-8 text-[#F59E0B] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>96</p>
-          <p className="text-xs text-white/60">Total Students</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>96</p>
+          <p className="text-xs text-slate-500">Total Students</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
         <div className="lg:col-span-2 glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <div className="flex flex-col lg:flex-row gap-3 lg:items-center justify-between mb-4">
-            <h2 className="text-lg lg:text-xl font-semibold text-white">Student Grades</h2>
+            <h2 className="text-lg lg:text-xl font-semibold text-slate-800">Student Grades</h2>
             <div className="relative flex-1 lg:max-w-xs">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
               <Input 
                 placeholder="Search students..." 
-                className="pl-10 bg-white/5 border-white/10 text-white placeholder:text-white/40 text-sm"
+                className="pl-10 bg-slate-50 border-slate-200 text-slate-800 placeholder:text-slate-400 text-sm"
               />
             </div>
           </div>
@@ -68,12 +68,12 @@ export const GradesView: React.FC = () => {
               <div key={student.id} className="glass-card rounded-xl p-3 lg:p-4">
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 mb-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex items-center justify-center text-white font-bold">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex items-center justify-center text-slate-800 font-bold">
                       {student.name.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold text-sm lg:text-base">{student.name}</h3>
-                      <p className="text-xs text-white/60">Class {student.class} • Roll {student.roll}</p>
+                      <h3 className="text-slate-800 font-semibold text-sm lg:text-base">{student.name}</h3>
+                      <p className="text-xs text-slate-500">Class {student.class} • Roll {student.roll}</p>
                     </div>
                   </div>
                   <Badge className={`${
@@ -87,16 +87,16 @@ export const GradesView: React.FC = () => {
 
                 <div className="grid grid-cols-3 gap-2 lg:gap-3">
                   <div className="glass-card rounded-lg p-2 text-center">
-                    <p className="text-xs text-white/60 mb-1">Math</p>
-                    <p className="text-sm lg:text-base font-bold text-white">{student.math}%</p>
+                    <p className="text-xs text-slate-500 mb-1">Math</p>
+                    <p className="text-sm lg:text-base font-bold text-slate-800">{student.math}%</p>
                   </div>
                   <div className="glass-card rounded-lg p-2 text-center">
-                    <p className="text-xs text-white/60 mb-1">Science</p>
-                    <p className="text-sm lg:text-base font-bold text-white">{student.science}%</p>
+                    <p className="text-xs text-slate-500 mb-1">Science</p>
+                    <p className="text-sm lg:text-base font-bold text-slate-800">{student.science}%</p>
                   </div>
                   <div className="glass-card rounded-lg p-2 text-center">
-                    <p className="text-xs text-white/60 mb-1">English</p>
-                    <p className="text-sm lg:text-base font-bold text-white">{student.english}%</p>
+                    <p className="text-xs text-slate-500 mb-1">English</p>
+                    <p className="text-sm lg:text-base font-bold text-slate-800">{student.english}%</p>
                   </div>
                 </div>
               </div>
@@ -106,13 +106,13 @@ export const GradesView: React.FC = () => {
 
         <div className="space-y-4">
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg font-semibold text-white mb-4">Grade Distribution</h2>
+            <h2 className="text-lg font-semibold text-slate-800 mb-4">Grade Distribution</h2>
             <div className="space-y-3">
               {gradeDistribution.map((item) => (
                 <div key={item.grade}>
                   <div className="flex justify-between mb-2">
-                    <span className="text-sm text-white">Grade {item.grade}</span>
-                    <span className="text-sm text-white/60">{item.count} students</span>
+                    <span className="text-sm text-slate-800">Grade {item.grade}</span>
+                    <span className="text-sm text-slate-500">{item.count} students</span>
                   </div>
                   <Progress value={item.percentage} className="h-2" />
                 </div>
@@ -121,15 +121,15 @@ export const GradesView: React.FC = () => {
           </div>
 
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg font-semibold text-white mb-4">Quick Actions</h2>
+            <h2 className="text-lg font-semibold text-slate-800 mb-4">Quick Actions</h2>
             <div className="space-y-2">
-              <Button className="w-full justify-start bg-[#2563EB]/20 hover:bg-[#2563EB]/30 text-white border border-[#2563EB]/30 text-sm">
+              <Button className="w-full justify-start bg-[#2563EB]/10 hover:bg-[#2563EB]/20 text-[#2563EB] border border-[#2563EB]/30 text-sm">
                 Export Grades
               </Button>
-              <Button className="w-full justify-start bg-[#10B981]/20 hover:bg-[#10B981]/30 text-white border border-[#10B981]/30 text-sm">
+              <Button className="w-full justify-start bg-[#10B981]/10 hover:bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30 text-sm">
                 Update Marks
               </Button>
-              <Button className="w-full justify-start bg-[#F59E0B]/20 hover:bg-[#F59E0B]/30 text-white border border-[#F59E0B]/30 text-sm">
+              <Button className="w-full justify-start bg-[#F59E0B]/10 hover:bg-[#F59E0B]/20 text-[#D97706] border border-[#F59E0B]/30 text-sm">
                 Generate Report
               </Button>
             </div>

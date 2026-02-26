@@ -101,7 +101,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   };
 
   return (
-    <div className="flex h-screen bg-[#0A0F1E]">
+    <div className="flex h-screen bg-[#F7F9FC]">
       <Sidebar role={role} onAriaClick={() => setShowChat(!showChat)} />
       
       <div className="flex-1 flex overflow-hidden">
@@ -122,7 +122,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
         {/* ARIA Chat Sidebar */}
         {showChat && (
           <div
-            className={`flex flex-col bg-[#0A0F1E] border-l border-white/10 transition-all duration-300
+            className={`flex flex-col bg-[#1E3A5F] border-l border-white/10 transition-all duration-300
               ${
                 isExpanded
                   ? 'fixed inset-0 z-50 w-full lg:relative lg:inset-auto lg:w-[600px]'
@@ -133,7 +133,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             {/* Close Button */}
             <button
               onClick={() => setShowChat(false)}
-              className="absolute top-4 right-14 z-10 w-8 h-8 rounded-lg flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"
+              className="absolute top-4 right-14 z-10 w-8 h-8 rounded-lg flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all z-20"
             >
               ✕
             </button>

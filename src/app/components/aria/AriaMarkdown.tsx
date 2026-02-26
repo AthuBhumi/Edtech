@@ -25,7 +25,7 @@ function parseInline(text: string): React.ReactNode[] {
     } else if (match[5]) {
       // `code`
       parts.push(
-        <code key={match.index} className="px-1.5 py-0.5 rounded text-xs font-mono bg-white/10 text-cyan-300 border border-white/10">
+        <code key={match.index} className="px-1.5 py-0.5 rounded text-xs font-mono bg-black/20 text-cyan-300 border border-white/15">
           {match[6]}
         </code>
       );
@@ -65,9 +65,9 @@ export const AriaMarkdown: React.FC<AriaMarkdownProps> = ({ content }) => {
         i++;
       }
       elements.push(
-        <div key={`code-${i}`} className="my-2 rounded-lg overflow-hidden border border-white/10">
+        <div key={`code-${i}`} className="my-2 rounded-lg overflow-hidden border border-white/15">
           {lang && (
-            <div className="px-3 py-1 text-[10px] font-mono text-cyan-400/70 bg-white/5 border-b border-white/10 uppercase tracking-wider">
+            <div className="px-3 py-1 text-[10px] font-mono text-cyan-400/70 bg-black/20 border-b border-white/15 uppercase tracking-wider">
               {lang}
             </div>
           )}
@@ -97,7 +97,7 @@ export const AriaMarkdown: React.FC<AriaMarkdownProps> = ({ content }) => {
 
     // Horizontal rule ---
     if (line.trim().match(/^---+$/)) {
-      elements.push(<hr key={`hr-${i}`} className="border-white/10 my-2" />);
+      elements.push(<hr key={`hr-${i}`} className="border-white/15 my-2" />);
       i++;
       continue;
     }

@@ -42,13 +42,13 @@ export const StudyWithAriaView: React.FC = () => {
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-2">
           <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-gradient-to-br from-[#06B6D4] via-[#2563EB] to-[#7C3AED] flex items-center justify-center animate-pulse">
-            <Sparkles className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+            <Sparkles className="w-5 h-5 lg:w-6 lg:h-6 text-slate-800" />
           </div>
           <div>
-            <h1 className="text-2xl lg:text-3xl font-bold text-white" style={{ fontFamily: 'var(--font-display)' }}>
+            <h1 className="text-2xl lg:text-3xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-display)' }}>
               Study with ARIA ✨
             </h1>
-            <p className="text-white/60 text-sm lg:text-base">Your AI study companion</p>
+            <p className="text-slate-500 text-sm lg:text-base">Your AI study companion</p>
           </div>
         </div>
       </div>
@@ -57,16 +57,16 @@ export const StudyWithAriaView: React.FC = () => {
         <div className="lg:col-span-2 space-y-4">
           {/* Chat Area */}
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg font-semibold text-white mb-4">Ask ARIA Anything 💬</h2>
+            <h2 className="text-lg font-semibold text-slate-800 mb-4">Ask ARIA Anything 💬</h2>
             
             <div className="space-y-3 mb-4 max-h-[300px] overflow-y-auto">
               {/* Sample conversation */}
               <div className="flex gap-3">
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#06B6D4] to-[#7C3AED] flex items-center justify-center flex-shrink-0">
-                  <Sparkles className="w-4 h-4 text-white" />
+                  <Sparkles className="w-4 h-4 text-slate-800" />
                 </div>
                 <div className="glass-card rounded-xl p-3 flex-1">
-                  <p className="text-sm text-white">
+                  <p className="text-sm text-slate-800">
                     Hi Arjun! I've analyzed your recent performance. You're doing great in Science but need to focus more on Hindi grammar. Shall I create a study plan?
                   </p>
                 </div>
@@ -74,22 +74,22 @@ export const StudyWithAriaView: React.FC = () => {
 
               <div className="flex gap-3 justify-end">
                 <div className="glass-card rounded-xl p-3 bg-[#2563EB]/20 max-w-[80%]">
-                  <p className="text-sm text-white">Yes please! Also, can you help me with quadratic equations?</p>
+                  <p className="text-sm text-slate-800">Yes please! Also, can you help me with quadratic equations?</p>
                 </div>
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-sm font-bold">A</span>
+                  <span className="text-slate-800 text-sm font-bold">A</span>
                 </div>
               </div>
 
               <div className="flex gap-3">
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#06B6D4] to-[#7C3AED] flex items-center justify-center flex-shrink-0">
-                  <Sparkles className="w-4 h-4 text-white" />
+                  <Sparkles className="w-4 h-4 text-slate-800" />
                 </div>
                 <div className="glass-card rounded-xl p-3 flex-1">
-                  <p className="text-sm text-white mb-2">
+                  <p className="text-sm text-slate-800 mb-2">
                     Perfect! For quadratic equations, remember the formula: ax² + bx + c = 0
                   </p>
-                  <p className="text-sm text-white mb-3">
+                  <p className="text-sm text-slate-800 mb-3">
                     Let's start with a simple example: x² - 5x + 6 = 0
                   </p>
                   <Badge className="bg-[#10B981]/20 text-[#10B981] border-none text-xs">
@@ -104,7 +104,7 @@ export const StudyWithAriaView: React.FC = () => {
                 placeholder="Ask ARIA for help..." 
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="pr-12 bg-white/5 border-white/10 text-white placeholder:text-white/40"
+                className="pr-12 bg-slate-50 border-slate-200 text-slate-800 placeholder:text-slate-400"
               />
               <Button 
                 size="sm" 
@@ -117,14 +117,14 @@ export const StudyWithAriaView: React.FC = () => {
 
           {/* Today's Study Plan */}
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg font-semibold text-white mb-4">Today's Study Plan 📅</h2>
+            <h2 className="text-lg font-semibold text-slate-800 mb-4">Today's Study Plan 📅</h2>
             <div className="space-y-3">
               {studyPlan.map((item, idx) => (
                 <div key={idx} className="glass-card rounded-xl p-3">
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <div className="flex-1">
-                      <h4 className="text-white font-semibold text-sm mb-1">{item.subject}</h4>
-                      <p className="text-xs text-white/60">{item.topic}</p>
+                      <h4 className="text-slate-800 font-semibold text-sm mb-1">{item.subject}</h4>
+                      <p className="text-xs text-slate-500">{item.topic}</p>
                     </div>
                     <Badge className={`${
                       item.priority === 'high' ? 'bg-[#F43F5E]/20 text-[#F43F5E]' : 'bg-[#F59E0B]/20 text-[#F59E0B]'
@@ -132,7 +132,7 @@ export const StudyWithAriaView: React.FC = () => {
                       {item.priority}
                     </Badge>
                   </div>
-                  <p className="text-xs text-white/60">{item.time}</p>
+                  <p className="text-xs text-slate-500">{item.time}</p>
                 </div>
               ))}
             </div>
@@ -142,7 +142,7 @@ export const StudyWithAriaView: React.FC = () => {
         <div className="space-y-4">
           {/* Study Tips */}
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
               <Lightbulb className="w-5 h-5 text-[#F59E0B]" />
               Smart Tips
             </h2>
@@ -150,14 +150,14 @@ export const StudyWithAriaView: React.FC = () => {
               {studyTips.map((tip, idx) => (
                 <div key={idx} className="glass-card rounded-xl p-3">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold text-white">{tip.subject}</span>
+                    <span className="text-sm font-semibold text-slate-800">{tip.subject}</span>
                     <Badge className={`${
                       tip.difficulty === 'Easy' ? 'bg-[#10B981]/20 text-[#10B981]' : 'bg-[#F59E0B]/20 text-[#F59E0B]'
                     } border-none text-xs`}>
                       {tip.difficulty}
                     </Badge>
                   </div>
-                  <p className="text-xs text-white/70">{tip.tip}</p>
+                  <p className="text-xs text-slate-600">{tip.tip}</p>
                 </div>
               ))}
             </div>
@@ -165,7 +165,7 @@ export const StudyWithAriaView: React.FC = () => {
 
           {/* Weekly Goals */}
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
               <Target className="w-5 h-5 text-[#10B981]" />
               Weekly Goals
             </h2>
@@ -173,10 +173,10 @@ export const StudyWithAriaView: React.FC = () => {
               {weeklyGoals.map((goal, idx) => (
                 <div key={idx}>
                   <div className="flex justify-between mb-2">
-                    <p className="text-xs text-white">{goal.goal}</p>
-                    <span className="text-xs text-white/60">{goal.current}/{goal.total}</span>
+                    <p className="text-xs text-slate-800">{goal.goal}</p>
+                    <span className="text-xs text-slate-500">{goal.current}/{goal.total}</span>
                   </div>
-                  <div className="w-full bg-white/10 rounded-full h-2">
+                  <div className="w-full bg-slate-100 rounded-full h-2">
                     <div 
                       className="bg-[#10B981] h-2 rounded-full transition-all" 
                       style={{ width: `${goal.progress}%` }}
@@ -189,17 +189,17 @@ export const StudyWithAriaView: React.FC = () => {
 
           {/* Quick Actions */}
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg font-semibold text-white mb-4">Quick Actions</h2>
+            <h2 className="text-lg font-semibold text-slate-800 mb-4">Quick Actions</h2>
             <div className="space-y-2">
-              <Button className="w-full justify-start bg-[#2563EB]/20 hover:bg-[#2563EB]/30 text-white border border-[#2563EB]/30 text-sm">
+              <Button className="w-full justify-start bg-[#2563EB]/10 hover:bg-[#2563EB]/20 text-[#2563EB] border border-[#2563EB]/30 text-sm">
                 <BookOpen className="w-4 h-4 mr-2" />
                 Practice Tests
               </Button>
-              <Button className="w-full justify-start bg-[#10B981]/20 hover:bg-[#10B981]/30 text-white border border-[#10B981]/30 text-sm">
+              <Button className="w-full justify-start bg-[#10B981]/10 hover:bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30 text-sm">
                 <Target className="w-4 h-4 mr-2" />
                 Set New Goal
               </Button>
-              <Button className="w-full justify-start bg-[#F59E0B]/20 hover:bg-[#F59E0B]/30 text-white border border-[#F59E0B]/30 text-sm">
+              <Button className="w-full justify-start bg-[#F59E0B]/10 hover:bg-[#F59E0B]/20 text-[#D97706] border border-[#F59E0B]/30 text-sm">
                 <Lightbulb className="w-4 h-4 mr-2" />
                 Get Study Tips
               </Button>

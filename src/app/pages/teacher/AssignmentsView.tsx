@@ -14,38 +14,38 @@ export const AssignmentsView: React.FC = () => {
   return (
     <div className="p-4 lg:p-6">
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           Assignments 📝
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">Create and manage student assignments</p>
+        <p className="text-slate-500 text-sm lg:text-base">Create and manage student assignments</p>
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mb-6">
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <FileText className="w-6 h-6 lg:w-8 lg:h-8 text-[#2563EB] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>12</p>
-          <p className="text-xs text-white/60">Total Active</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>12</p>
+          <p className="text-xs text-slate-500">Total Active</p>
         </div>
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <CheckCircle className="w-6 h-6 lg:w-8 lg:h-8 text-[#10B981] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>95</p>
-          <p className="text-xs text-white/60">Submitted</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>95</p>
+          <p className="text-xs text-slate-500">Submitted</p>
         </div>
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <Clock className="w-6 h-6 lg:w-8 lg:h-8 text-[#F59E0B] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>35</p>
-          <p className="text-xs text-white/60">Pending</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>35</p>
+          <p className="text-xs text-slate-500">Pending</p>
         </div>
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <AlertCircle className="w-6 h-6 lg:w-8 lg:h-8 text-[#F43F5E] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>8</p>
-          <p className="text-xs text-white/60">To Review</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>8</p>
+          <p className="text-xs text-slate-500">To Review</p>
         </div>
       </div>
 
       <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg lg:text-xl font-semibold text-white">Recent Assignments</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800">Recent Assignments</h2>
           <Button className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm">
             Create New
           </Button>
@@ -64,8 +64,8 @@ export const AssignmentsView: React.FC = () => {
                     }`} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-white font-semibold text-sm lg:text-base mb-1">{assignment.title}</h3>
-                    <p className="text-xs text-white/60">Class {assignment.class} • Due: {assignment.dueDate}</p>
+                    <h3 className="text-slate-800 font-semibold text-sm lg:text-base mb-1">{assignment.title}</h3>
+                    <p className="text-xs text-slate-500">Class {assignment.class} • Due: {assignment.dueDate}</p>
                   </div>
                 </div>
 

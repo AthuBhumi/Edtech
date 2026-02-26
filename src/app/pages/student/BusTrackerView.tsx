@@ -36,10 +36,10 @@ export const BusTrackerView: React.FC = () => {
     <div className="p-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           School Bus Tracker 🚌
         </h1>
-        <p className="text-white/60">Live tracking and schedule for Route {busInfo.routeNumber}</p>
+        <p className="text-slate-500">Live tracking and schedule for Route {busInfo.routeNumber}</p>
       </div>
 
       {/* Toggle Morning/Evening */}
@@ -48,7 +48,7 @@ export const BusTrackerView: React.FC = () => {
           onClick={() => setViewMode('morning')}
           className={viewMode === 'morning' 
             ? 'bg-[#2563EB] text-white' 
-            : 'bg-white/5 text-white/60 hover:bg-white/10'
+            : 'bg-slate-50 text-slate-500 hover:bg-slate-100'
           }
         >
           Morning Pickup
@@ -57,7 +57,7 @@ export const BusTrackerView: React.FC = () => {
           onClick={() => setViewMode('evening')}
           className={viewMode === 'evening' 
             ? 'bg-[#2563EB] text-white' 
-            : 'bg-white/5 text-white/60 hover:bg-white/10'
+            : 'bg-slate-50 text-slate-500 hover:bg-slate-100'
           }
         >
           Evening Pickup
@@ -75,17 +75,17 @@ export const BusTrackerView: React.FC = () => {
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <h2 className="text-2xl font-bold text-white">Route {busInfo.routeNumber}</h2>
+                    <h2 className="text-2xl font-bold text-slate-800">Route {busInfo.routeNumber}</h2>
                     <Badge className="bg-[#10B981]/20 text-[#10B981] border-none">
                       <CheckCircle className="w-3 h-3 mr-1" />
                       {busInfo.status === 'on-time' ? 'On Time' : 'Delayed'}
                     </Badge>
                   </div>
-                  <p className="text-white/60">Live tracking active</p>
+                  <p className="text-slate-500">Live tracking active</p>
                 </div>
 
                 <div className="text-right">
-                  <p className="text-sm text-white/60 mb-1">ETA to your stop</p>
+                  <p className="text-sm text-slate-500 mb-1">ETA to your stop</p>
                   <p className="text-4xl font-bold text-[#10B981]" style={{ fontFamily: 'var(--font-mono)' }}>
                     {busInfo.eta}
                   </p>
@@ -95,23 +95,23 @@ export const BusTrackerView: React.FC = () => {
               <div className="grid grid-cols-3 gap-4">
                 <div className="glass-card rounded-xl p-4">
                   <MapPin className="w-5 h-5 text-[#2563EB] mb-2" />
-                  <p className="text-xs text-white/60 mb-1">Current Location</p>
-                  <p className="text-white font-semibold">{busInfo.nextStop}</p>
-                  <p className="text-xs text-white/40 mt-1">{busInfo.distanceToYou} from you</p>
+                  <p className="text-xs text-slate-500 mb-1">Current Location</p>
+                  <p className="text-slate-800 font-semibold">{busInfo.nextStop}</p>
+                  <p className="text-xs text-slate-400 mt-1">{busInfo.distanceToYou} from you</p>
                 </div>
 
                 <div className="glass-card rounded-xl p-4">
                   <Clock className="w-5 h-5 text-[#F59E0B] mb-2" />
-                  <p className="text-xs text-white/60 mb-1">Your Pickup Time</p>
-                  <p className="text-white font-semibold">{viewMode === 'morning' ? morningPickup : eveningPickup}</p>
-                  <p className="text-xs text-white/40 mt-1">Be ready 5 mins early</p>
+                  <p className="text-xs text-slate-500 mb-1">Your Pickup Time</p>
+                  <p className="text-slate-800 font-semibold">{viewMode === 'morning' ? morningPickup : eveningPickup}</p>
+                  <p className="text-xs text-slate-400 mt-1">Be ready 5 mins early</p>
                 </div>
 
                 <div className="glass-card rounded-xl p-4">
                   <Bus className="w-5 h-5 text-[#7C3AED] mb-2" />
-                  <p className="text-xs text-white/60 mb-1">Occupancy</p>
-                  <p className="text-white font-semibold">{busInfo.currentOccupancy}/{busInfo.capacity}</p>
-                  <p className="text-xs text-white/40 mt-1">{busInfo.capacity - busInfo.currentOccupancy} seats free</p>
+                  <p className="text-xs text-slate-500 mb-1">Occupancy</p>
+                  <p className="text-slate-800 font-semibold">{busInfo.currentOccupancy}/{busInfo.capacity}</p>
+                  <p className="text-xs text-slate-400 mt-1">{busInfo.capacity - busInfo.currentOccupancy} seats free</p>
                 </div>
               </div>
             </div>
@@ -119,8 +119,8 @@ export const BusTrackerView: React.FC = () => {
 
           {/* Map Placeholder */}
           <div className="glass-card rounded-2xl p-6">
-            <h3 className="text-lg font-semibold text-white mb-4">Live Map</h3>
-            <div className="bg-white/5 rounded-xl aspect-video flex items-center justify-center relative overflow-hidden">
+            <h3 className="text-lg font-semibold text-slate-800 mb-4">Live Map</h3>
+            <div className="bg-slate-50 rounded-xl aspect-video flex items-center justify-center relative overflow-hidden">
               {/* Gradient background to simulate map */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#2563EB]/10 via-[#06B6D4]/10 to-[#10B981]/10" />
               
@@ -129,23 +129,23 @@ export const BusTrackerView: React.FC = () => {
                 <div className="w-20 h-20 rounded-full bg-[#2563EB]/30 flex items-center justify-center mb-3 mx-auto animate-pulse">
                   <Bus className="w-10 h-10 text-[#2563EB]" />
                 </div>
-                <p className="text-white/60 text-sm">Bus is currently at</p>
-                <p className="text-white font-semibold">{busInfo.nextStop}</p>
-                <p className="text-white/40 text-xs mt-2">Moving towards your stop</p>
+                <p className="text-slate-500 text-sm">Bus is currently at</p>
+                <p className="text-slate-800 font-semibold">{busInfo.nextStop}</p>
+                <p className="text-slate-400 text-xs mt-2">Moving towards your stop</p>
               </div>
 
               {/* Decorative elements */}
               <div className="absolute top-4 left-4 glass-card rounded-lg px-3 py-2">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-[#10B981] rounded-full animate-pulse" />
-                  <span className="text-xs text-white">Live</span>
+                  <span className="text-xs text-slate-800">Live</span>
                 </div>
               </div>
 
               <div className="absolute bottom-4 right-4 glass-card rounded-lg px-3 py-2">
                 <div className="flex items-center gap-2">
                   <Navigation className="w-4 h-4 text-[#06B6D4]" />
-                  <span className="text-xs text-white">{busInfo.distanceToYou} away</span>
+                  <span className="text-xs text-slate-800">{busInfo.distanceToYou} away</span>
                 </div>
               </div>
             </div>
@@ -161,20 +161,20 @@ export const BusTrackerView: React.FC = () => {
         <div>
           {/* Driver Info */}
           <div className="glass-card rounded-2xl p-6 mb-6">
-            <h3 className="text-lg font-semibold text-white mb-4">Driver Details</h3>
+            <h3 className="text-lg font-semibold text-slate-800 mb-4">Driver Details</h3>
             <div className="flex items-start gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex items-center justify-center text-white font-bold">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex items-center justify-center text-slate-800 font-bold">
                 KS
               </div>
               <div>
-                <p className="text-white font-semibold">{busInfo.driver}</p>
-                <p className="text-xs text-white/60">Route {busInfo.routeNumber} • {busInfo.vehicle}</p>
+                <p className="text-slate-800 font-semibold">{busInfo.driver}</p>
+                <p className="text-xs text-slate-500">Route {busInfo.routeNumber} • {busInfo.vehicle}</p>
               </div>
             </div>
 
             <Button 
               variant="outline" 
-              className="w-full glass-card border-white/10 text-white hover:bg-white/10"
+              className="w-full glass-card border-slate-200 text-slate-800 hover:bg-slate-100"
             >
               <Phone className="w-4 h-4 mr-2" />
               Call Driver
@@ -183,7 +183,7 @@ export const BusTrackerView: React.FC = () => {
 
           {/* Route Stops */}
           <div className="glass-card rounded-2xl p-6">
-            <h3 className="text-lg font-semibold text-white mb-4">Route Stops</h3>
+            <h3 className="text-lg font-semibold text-slate-800 mb-4">Route Stops</h3>
             <div className="space-y-3">
               {route.map((stop, idx) => {
                 const isCurrent = stop.status === 'current';
@@ -195,7 +195,7 @@ export const BusTrackerView: React.FC = () => {
                     {idx < route.length - 1 && (
                       <div 
                         className={`absolute left-4 top-8 w-0.5 h-12 ${
-                          isCompleted ? 'bg-[#10B981]' : 'bg-white/10'
+                          isCompleted ? 'bg-[#10B981]' : 'bg-slate-100'
                         }`}
                       />
                     )}
@@ -206,7 +206,7 @@ export const BusTrackerView: React.FC = () => {
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                         isCompleted ? 'bg-[#10B981] text-white' :
                         isCurrent ? 'bg-[#F59E0B] text-white animate-pulse' :
-                        'bg-white/10 text-white/40'
+                        'bg-slate-100 text-slate-400'
                       }`}>
                         {isCompleted ? (
                           <CheckCircle className="w-4 h-4" />
@@ -221,9 +221,9 @@ export const BusTrackerView: React.FC = () => {
                         <div className="flex items-start justify-between mb-1">
                           <p className={`font-medium ${
                             isYourStop ? 'text-[#2563EB]' :
-                            isCurrent ? 'text-white' :
-                            isCompleted ? 'text-white/60' :
-                            'text-white/40'
+                            isCurrent ? 'text-slate-800' :
+                            isCompleted ? 'text-slate-500' :
+                            'text-slate-400'
                           }`}>
                             {stop.stop}
                           </p>
@@ -233,7 +233,7 @@ export const BusTrackerView: React.FC = () => {
                             </Badge>
                           )}
                         </div>
-                        <p className="text-xs text-white/60">{stop.time}</p>
+                        <p className="text-xs text-slate-500">{stop.time}</p>
                       </div>
                     </div>
                   </div>
@@ -244,16 +244,16 @@ export const BusTrackerView: React.FC = () => {
 
           {/* ARIA Alerts */}
           <div className="glass-card rounded-2xl p-6 mt-6">
-            <h3 className="text-lg font-semibold text-white mb-4">ARIA Alerts</h3>
+            <h3 className="text-lg font-semibold text-slate-800 mb-4">ARIA Alerts</h3>
             <div className="space-y-3">
               <div className="bg-[#10B981]/10 border border-[#10B981]/20 rounded-xl p-3">
-                <p className="text-sm text-white/90">
+                <p className="text-sm text-slate-800">
                   ✅ Bus is on time! Arrive at your stop by {viewMode === 'morning' ? '7:45 AM' : '3:25 PM'}
                 </p>
               </div>
 
               <div className="bg-[#2563EB]/10 border border-[#2563EB]/20 rounded-xl p-3">
-                <p className="text-sm text-white/90">
+                <p className="text-sm text-slate-800">
                   🔔 I'll notify you when the bus is 5 mins away
                 </p>
               </div>

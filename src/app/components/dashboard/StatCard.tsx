@@ -32,9 +32,9 @@ export const StatCard: React.FC<StatCardProps> = ({
     <div className="glass-card rounded-2xl p-6 glass-card-hover">
       <div className="flex items-start justify-between mb-4">
         <div>
-          <p className="text-sm text-white/60 mb-1">{title}</p>
+          <p className="text-sm text-slate-500 mb-1">{title}</p>
           <h3 
-            className="font-mono text-3xl font-bold text-white"
+            className="font-mono text-3xl font-bold text-slate-800"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
             {value}
@@ -50,13 +50,13 @@ export const StatCard: React.FC<StatCardProps> = ({
           <span className={`text-sm ${change.positive ? 'text-emerald-400' : 'text-rose-400'}`}>
             {change.positive ? '↑' : '↓'} {change.value}
           </span>
-          <span className="text-xs text-white/40">vs last week</span>
+          <span className="text-xs text-slate-400">vs last week</span>
         </div>
       )}
 
       {progress !== undefined && (
         <div className="mt-4">
-          <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+          <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
             <div 
               className={`h-full bg-gradient-to-r ${colorClasses[color]} transition-all duration-500`}
               style={{ width: `${progress}%` }}

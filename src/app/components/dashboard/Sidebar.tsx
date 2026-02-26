@@ -113,73 +113,64 @@ export const Sidebar: React.FC<SidebarProps> = ({ role, onAriaClick }) => {
   };
 
   return (
-    <div className="w-16 lg:w-20 h-screen bg-[#0A0F1E] border-r border-white/10 flex flex-col items-center py-4 lg:py-6">
+    <div className="w-56 h-screen bg-[#1E3A5F] border-r border-white/10 flex flex-col py-5 px-3">
       {/* Logo */}
-      <div className="mb-6 lg:mb-8">
-        <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex items-center justify-center cursor-pointer hover:scale-110 transition-transform"
+      <div className="mb-6 flex items-center gap-3 px-2">
+        <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex items-center justify-center cursor-pointer hover:scale-110 transition-transform shrink-0"
           onClick={() => navigate(basePath)}
         >
-          <span className="text-white font-bold text-xs lg:text-sm">ES</span>
+          <span className="text-white font-bold text-sm">ES</span>
         </div>
+        <span className="text-white font-semibold text-base tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>EduSphere</span>
       </div>
 
       {/* Nav Items */}
-      <nav className="flex-1 w-full flex flex-col items-center gap-1 lg:gap-2">
+      <nav className="flex-1 w-full flex flex-col gap-1 overflow-y-auto">
         {navItems.map((item) => {
           const active = isActive(item.path);
           return (
             <button
               key={item.path}
               onClick={() => handleNavClick(item.path)}
-              className={`w-10 h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center transition-all relative group ${active
-                  ? 'bg-[#2563EB]/20 text-[#2563EB]'
-                  : 'text-white/60 hover:text-white hover:bg-white/5'
+              className={`w-full h-10 rounded-xl flex items-center gap-3 px-3 transition-all relative ${active
+                  ? 'bg-white/20 text-white font-medium'
+                  : 'text-white/60 hover:text-white hover:bg-white/10'
                 }`}
             >
               {active && (
-                <div className="absolute left-0 w-1 h-6 lg:h-8 bg-[#2563EB] rounded-r-full" />
+                <div className="absolute left-0 w-1 h-6 bg-white rounded-r-full" />
               )}
-              <item.icon className="w-4 h-4 lg:w-5 lg:h-5" />
-
-              {/* Tooltip */}
-              <div className="absolute left-full ml-2 px-3 py-2 bg-[#111827] text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50 hidden lg:block">
-                {item.label}
-              </div>
+              <item.icon className="w-[18px] h-[18px] shrink-0" />
+              <span className="text-sm truncate">{item.label}</span>
             </button>
           );
         })}
       </nav>
 
       {/* ARIA Button */}
-      <div className="mb-3 lg:mb-4">
+      <div className="mb-3">
         <button
           onClick={onAriaClick}
-          className="relative group"
+          className="w-full flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 transition-all"
         >
           <AriaOrb size="sm" />
-          <div className="absolute left-full ml-2 px-3 py-2 bg-[#111827] text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50 hidden lg:block">
-            Chat with ARIA
-          </div>
+          <span className="text-white/80 text-sm font-medium">Chat with ARIA</span>
         </button>
       </div>
 
       {/* Settings */}
-      <button className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center text-white/60 hover:text-white hover:bg-white/5 transition-all relative group mb-2">
-        <Settings className="w-4 h-4 lg:w-5 lg:h-5" />
-        <div className="absolute left-full ml-2 px-3 py-2 bg-[#111827] text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50 hidden lg:block">
-          Settings
-        </div>
+      <button className="w-full h-10 rounded-xl flex items-center gap-3 px-3 text-white/60 hover:text-white hover:bg-white/10 transition-all mb-1">
+        <Settings className="w-[18px] h-[18px] shrink-0" />
+        <span className="text-sm">Settings</span>
       </button>
 
       {/* Logout */}
       <button
         onClick={() => navigate('/')}
-        className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center text-white/60 hover:text-[#F43F5E] hover:bg-[#F43F5E]/10 transition-all relative group"
+        className="w-full h-10 rounded-xl flex items-center gap-3 px-3 text-white/60 hover:text-[#F43F5E] hover:bg-[#F43F5E]/10 transition-all"
       >
-        <LogOut className="w-4 h-4 lg:w-5 lg:h-5" />
-        <div className="absolute left-full ml-2 px-3 py-2 bg-[#111827] text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50 hidden lg:block">
-          Logout
-        </div>
+        <LogOut className="w-[18px] h-[18px] shrink-0" />
+        <span className="text-sm">Logout</span>
       </button>
     </div>
   );

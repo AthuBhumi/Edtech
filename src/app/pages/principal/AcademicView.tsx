@@ -42,50 +42,50 @@ export const AcademicView: React.FC = () => {
     <div className="p-4 lg:p-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           Academic Overview 📚
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">Class performance, exams, and curriculum tracking</p>
+        <p className="text-slate-500 text-sm lg:text-base">Class performance, exams, and curriculum tracking</p>
       </div>
 
       {/* Quick Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mb-6">
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <BookOpen className="w-6 h-6 lg:w-8 lg:h-8 text-[#2563EB] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>87%</p>
-          <p className="text-xs text-white/60">Avg Performance</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>87%</p>
+          <p className="text-xs text-slate-500">Avg Performance</p>
         </div>
 
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <Award className="w-6 h-6 lg:w-8 lg:h-8 text-[#10B981] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>95.8%</p>
-          <p className="text-xs text-white/60">Pass Rate</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>95.8%</p>
+          <p className="text-xs text-slate-500">Pass Rate</p>
         </div>
 
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <Users className="w-6 h-6 lg:w-8 lg:h-8 text-[#F59E0B] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>192</p>
-          <p className="text-xs text-white/60">Total Classes</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>192</p>
+          <p className="text-xs text-slate-500">Total Classes</p>
         </div>
 
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <FileText className="w-6 h-6 lg:w-8 lg:h-8 text-[#7C3AED] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>83%</p>
-          <p className="text-xs text-white/60">Syllabus Complete</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>83%</p>
+          <p className="text-xs text-slate-500">Syllabus Complete</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
         {/* Class Performance */}
         <div className="lg:col-span-2 glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Class Performance Overview</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Class Performance Overview</h2>
           <div className="space-y-3">
             {classData.map((cls, idx) => (
               <div key={idx} className="glass-card rounded-xl p-3 lg:p-4">
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 mb-3">
                   <div>
-                    <h3 className="text-white font-semibold text-base lg:text-lg">{cls.class}</h3>
-                    <p className="text-xs text-white/60">{cls.teacher} • {cls.students} students</p>
+                    <h3 className="text-slate-800 font-semibold text-base lg:text-lg">{cls.class}</h3>
+                    <p className="text-xs text-slate-500">{cls.teacher} • {cls.students} students</p>
                   </div>
                   <div className="flex gap-2">
                     <Badge className="bg-[#2563EB]/20 text-[#2563EB] border-none text-xs">
@@ -99,15 +99,15 @@ export const AcademicView: React.FC = () => {
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <div className="flex justify-between mb-1 text-xs">
-                      <span className="text-white/60">Performance</span>
-                      <span className="text-white">{cls.avgScore}%</span>
+                      <span className="text-slate-500">Performance</span>
+                      <span className="text-slate-800">{cls.avgScore}%</span>
                     </div>
                     <Progress value={cls.avgScore} className="h-2" />
                   </div>
                   <div>
                     <div className="flex justify-between mb-1 text-xs">
-                      <span className="text-white/60">Attendance</span>
-                      <span className="text-white">{cls.attendance}%</span>
+                      <span className="text-slate-500">Attendance</span>
+                      <span className="text-slate-800">{cls.attendance}%</span>
                     </div>
                     <Progress value={cls.attendance} className="h-2" />
                   </div>
@@ -119,7 +119,7 @@ export const AcademicView: React.FC = () => {
 
         {/* Upcoming Exams */}
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Exam Schedule</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Exam Schedule</h2>
           <div className="space-y-3">
             {examSchedule.map((exam, idx) => (
               <div key={idx} className="glass-card rounded-xl p-3 lg:p-4">
@@ -128,9 +128,9 @@ export const AcademicView: React.FC = () => {
                     <Calendar className="w-5 h-5 text-[#2563EB]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="text-white font-semibold text-sm truncate">{exam.exam}</h4>
-                    <p className="text-xs text-white/60">{exam.date}</p>
-                    <p className="text-xs text-white/40">{exam.classes}</p>
+                    <h4 className="text-slate-800 font-semibold text-sm truncate">{exam.exam}</h4>
+                    <p className="text-xs text-slate-500">{exam.date}</p>
+                    <p className="text-xs text-slate-400">{exam.classes}</p>
                   </div>
                 </div>
                 <Badge className="bg-[#F59E0B]/20 text-[#F59E0B] border-none text-xs w-full justify-center">
@@ -145,13 +145,13 @@ export const AcademicView: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
         {/* Syllabus Progress */}
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Syllabus Completion (Class 8A)</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Syllabus Completion (Class 8A)</h2>
           <div className="space-y-4">
             {syllabusProgress.map((item, idx) => (
               <div key={idx}>
                 <div className="flex justify-between mb-2">
-                  <span className="text-sm text-white">{item.subject}</span>
-                  <span className="text-sm text-white/60">{item.progress}%</span>
+                  <span className="text-sm text-slate-800">{item.subject}</span>
+                  <span className="text-sm text-slate-500">{item.progress}%</span>
                 </div>
                 <Progress value={item.progress} className="h-2" />
               </div>
@@ -161,18 +161,18 @@ export const AcademicView: React.FC = () => {
 
         {/* Monthly Performance Trend */}
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">School-Wide Performance</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">School-Wide Performance</h2>
           <ResponsiveContainer width="100%" height={250}>
             <LineChart data={monthlyPerformance}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
               <XAxis dataKey="month" stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <YAxis stroke="#9CA3AF" domain={[70, 100]} tick={{ fontSize: 12 }} />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: '#111827', 
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  backgroundColor: '#FFFFFF', 
+                  border: '1px solid #E2E8F0',
                   borderRadius: '8px',
-                  color: '#fff'
+                  color: '#1E293B'
                 }} 
               />
               <Line type="monotone" dataKey="avgScore" stroke="#10B981" strokeWidth={3} dot={{ fill: '#10B981', r: 5 }} />

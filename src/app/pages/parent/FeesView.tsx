@@ -19,27 +19,27 @@ export const FeesView: React.FC = () => {
   return (
     <div className="p-4 lg:p-6">
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           Fee Payment 💰
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">Manage school fee payments</p>
+        <p className="text-slate-500 text-sm lg:text-base">Manage school fee payments</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <DollarSign className="w-6 h-6 lg:w-8 lg:h-8 text-[#10B981] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>₹53,000</p>
-          <p className="text-xs text-white/60">Paid This Term</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>₹53,000</p>
+          <p className="text-xs text-slate-500">Paid This Term</p>
         </div>
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <Clock className="w-6 h-6 lg:w-8 lg:h-8 text-[#F59E0B] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>₹9,500</p>
-          <p className="text-xs text-white/60">Pending</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>₹9,500</p>
+          <p className="text-xs text-slate-500">Pending</p>
         </div>
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <AlertCircle className="w-6 h-6 lg:w-8 lg:h-8 text-[#2563EB] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>Mar 5</p>
-          <p className="text-xs text-white/60">Next Due Date</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>Mar 5</p>
+          <p className="text-xs text-slate-500">Next Due Date</p>
         </div>
       </div>
 
@@ -48,8 +48,8 @@ export const FeesView: React.FC = () => {
           <div key={idx} className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h2 className="text-lg font-semibold text-white">{fee.child}</h2>
-                <p className="text-sm text-white/60">Class {fee.class}</p>
+                <h2 className="text-lg font-semibold text-slate-800">{fee.child}</h2>
+                <p className="text-sm text-slate-500">Class {fee.class}</p>
               </div>
               <Badge className={`${
                 fee.status === 'paid' ? 'bg-[#10B981]/20 text-[#10B981]' : 'bg-[#F59E0B]/20 text-[#F59E0B]'
@@ -60,27 +60,27 @@ export const FeesView: React.FC = () => {
 
             <div className="space-y-2 mb-4">
               <div className="flex justify-between text-sm">
-                <span className="text-white/60">Tuition Fee</span>
-                <span className="text-white">₹{fee.tuition.toLocaleString()}</span>
+                <span className="text-slate-500">Tuition Fee</span>
+                <span className="text-slate-800">₹{fee.tuition.toLocaleString()}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-white/60">Transport</span>
-                <span className="text-white">₹{fee.transport.toLocaleString()}</span>
+                <span className="text-slate-500">Transport</span>
+                <span className="text-slate-800">₹{fee.transport.toLocaleString()}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-white/60">Activities</span>
-                <span className="text-white">₹{fee.activities.toLocaleString()}</span>
+                <span className="text-slate-500">Activities</span>
+                <span className="text-slate-800">₹{fee.activities.toLocaleString()}</span>
               </div>
-              <div className="border-t border-white/10 pt-2 mt-2 flex justify-between font-semibold">
-                <span className="text-white">Total</span>
-                <span className="text-white">₹{fee.total.toLocaleString()}</span>
+              <div className="border-t border-slate-200 pt-2 mt-2 flex justify-between font-semibold">
+                <span className="text-slate-800">Total</span>
+                <span className="text-slate-800">₹{fee.total.toLocaleString()}</span>
               </div>
             </div>
 
             <div className="mb-4">
               <div className="flex justify-between text-xs mb-2">
-                <span className="text-white/60">Paid: ₹{fee.paid.toLocaleString()}</span>
-                <span className="text-white">{((fee.paid / fee.total) * 100).toFixed(0)}%</span>
+                <span className="text-slate-500">Paid: ₹{fee.paid.toLocaleString()}</span>
+                <span className="text-slate-800">{((fee.paid / fee.total) * 100).toFixed(0)}%</span>
               </div>
               <Progress value={(fee.paid / fee.total) * 100} className="h-2" />
             </div>
@@ -95,19 +95,19 @@ export const FeesView: React.FC = () => {
       </div>
 
       <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-        <h2 className="text-lg font-semibold text-white mb-4">Payment History</h2>
+        <h2 className="text-lg font-semibold text-slate-800 mb-4">Payment History</h2>
         <div className="space-y-3">
           {paymentHistory.map((payment, idx) => (
             <div key={idx} className="glass-card rounded-xl p-3 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-[#10B981]" />
                 <div>
-                  <p className="text-white font-semibold text-sm">{payment.child}</p>
-                  <p className="text-xs text-white/60">{payment.date} • {payment.method}</p>
+                  <p className="text-slate-800 font-semibold text-sm">{payment.child}</p>
+                  <p className="text-xs text-slate-500">{payment.date} • {payment.method}</p>
                 </div>
               </div>
               <div className="text-right">
-                <p className="text-white font-semibold">₹{payment.amount.toLocaleString()}</p>
+                <p className="text-slate-800 font-semibold">₹{payment.amount.toLocaleString()}</p>
                 <Badge className="bg-[#10B981]/20 text-[#10B981] border-none text-xs mt-1">
                   {payment.status}
                 </Badge>

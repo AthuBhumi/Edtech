@@ -23,36 +23,36 @@ export const GradesView: React.FC = () => {
   return (
     <div className="p-4 lg:p-6">
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           My Grades 🎓
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">Track your academic performance</p>
+        <p className="text-slate-500 text-sm lg:text-base">Track your academic performance</p>
       </div>
 
       <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6 mb-6">
-        <h2 className="text-lg font-semibold text-white mb-4">Overall Performance</h2>
+        <h2 className="text-lg font-semibold text-slate-800 mb-4">Overall Performance</h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div>
-            <p className="text-sm text-white/60 mb-1">Percentage</p>
-            <p className="text-3xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>
+            <p className="text-sm text-slate-500 mb-1">Percentage</p>
+            <p className="text-3xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>
               {overall.percentage}%
             </p>
           </div>
           <div>
-            <p className="text-sm text-white/60 mb-1">Grade</p>
+            <p className="text-sm text-slate-500 mb-1">Grade</p>
             <Badge className="bg-[#10B981]/20 text-[#10B981] border-none text-2xl px-4 py-2">
               {overall.grade}
             </Badge>
           </div>
           <div>
-            <p className="text-sm text-white/60 mb-1">Class Rank</p>
-            <p className="text-3xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>
+            <p className="text-sm text-slate-500 mb-1">Class Rank</p>
+            <p className="text-3xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>
               #{overall.rank}
             </p>
           </div>
           <div>
-            <p className="text-sm text-white/60 mb-1">Out of</p>
-            <p className="text-3xl font-bold text-white/60" style={{ fontFamily: 'var(--font-mono)' }}>
+            <p className="text-sm text-slate-500 mb-1">Out of</p>
+            <p className="text-3xl font-bold text-slate-500" style={{ fontFamily: 'var(--font-mono)' }}>
               {overall.total}
             </p>
           </div>
@@ -64,8 +64,8 @@ export const GradesView: React.FC = () => {
           <div key={subject.name} className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <h3 className="text-lg font-semibold text-white mb-1">{subject.name}</h3>
-                <p className="text-sm text-white/60">Rank {subject.rank} of {subject.total}</p>
+                <h3 className="text-lg font-semibold text-slate-800 mb-1">{subject.name}</h3>
+                <p className="text-sm text-slate-500">Rank {subject.rank} of {subject.total}</p>
               </div>
               <Badge className={`${
                 subject.grade.includes('A+') ? 'bg-[#10B981]/20 text-[#10B981]' :
@@ -78,18 +78,18 @@ export const GradesView: React.FC = () => {
 
             <div className="mb-4">
               <div className="flex justify-between mb-2">
-                <span className="text-sm text-white/60">Score</span>
-                <span className="text-sm font-semibold text-white">{subject.score}%</span>
+                <span className="text-sm text-slate-500">Score</span>
+                <span className="text-sm font-semibold text-slate-800">{subject.score}%</span>
               </div>
               <Progress value={subject.score} className="h-3" />
             </div>
 
             <div>
-              <p className="text-sm text-white/60 mb-2">Recent Assignments</p>
+              <p className="text-sm text-slate-500 mb-2">Recent Assignments</p>
               <div className="grid grid-cols-4 gap-2">
                 {subject.assignments.map((score, idx) => (
                   <div key={idx} className="glass-card rounded-lg p-2 text-center">
-                    <p className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>
+                    <p className="text-lg font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>
                       {score}
                     </p>
                   </div>

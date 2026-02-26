@@ -41,10 +41,10 @@ export const ScheduleView: React.FC = () => {
   return (
     <div className="p-4 lg:p-6">
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           My Schedule 📅
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">Weekly timetable and class schedule</p>
+        <p className="text-slate-500 text-sm lg:text-base">Weekly timetable and class schedule</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-3 lg:gap-4">
@@ -53,7 +53,7 @@ export const ScheduleView: React.FC = () => {
             day.day === today ? 'ring-2 ring-[#2563EB]' : ''
           }`}>
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-base lg:text-lg font-semibold text-white">{day.day}</h2>
+              <h2 className="text-base lg:text-lg font-semibold text-slate-800">{day.day}</h2>
               {day.day === today && (
                 <Badge className="bg-[#2563EB]/20 text-[#2563EB] border-none text-xs">Today</Badge>
               )}
@@ -71,16 +71,16 @@ export const ScheduleView: React.FC = () => {
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Clock className="w-3 h-3 text-[#F59E0B]" />
-                    <span className="text-xs text-white/80 font-medium">{slot.time}</span>
+                    <span className="text-xs text-slate-700 font-medium">{slot.time}</span>
                   </div>
-                  <h3 className="text-sm font-semibold text-white mb-1">{slot.subject}</h3>
+                  <h3 className="text-sm font-semibold text-slate-800 mb-1">{slot.subject}</h3>
                   {slot.class !== '-' && (
                     <>
-                      <div className="flex items-center gap-2 text-xs text-white/60 mb-1">
+                      <div className="flex items-center gap-2 text-xs text-slate-500 mb-1">
                         <Users className="w-3 h-3" />
                         <span>Class {slot.class} • {slot.students} students</span>
                       </div>
-                      <div className="flex items-center gap-2 text-xs text-white/60">
+                      <div className="flex items-center gap-2 text-xs text-slate-500">
                         <MapPin className="w-3 h-3" />
                         <span>{slot.room}</span>
                       </div>

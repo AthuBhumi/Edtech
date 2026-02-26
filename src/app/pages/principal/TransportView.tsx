@@ -28,10 +28,10 @@ export const TransportView: React.FC = () => {
     <div className="p-4 lg:p-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           Transport Management 🚌
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">Live bus tracking and route management</p>
+        <p className="text-slate-500 text-sm lg:text-base">Live bus tracking and route management</p>
       </div>
 
       {/* Stats */}
@@ -39,10 +39,10 @@ export const TransportView: React.FC = () => {
         {stats.map((stat, idx) => (
           <div key={idx} className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
             <stat.icon className="w-6 h-6 lg:w-8 lg:h-8 mb-3" style={{ color: stat.color }} />
-            <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>
+            <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>
               {stat.value}
             </p>
-            <p className="text-xs text-white/60">{stat.label}</p>
+            <p className="text-xs text-slate-500">{stat.label}</p>
           </div>
         ))}
       </div>
@@ -50,7 +50,7 @@ export const TransportView: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
         {/* Bus Routes */}
         <div className="lg:col-span-2 glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Live Bus Status</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Live Bus Status</h2>
           <div className="space-y-3">
             {busRoutes.map((route) => (
               <div key={route.id} className="glass-card rounded-xl p-3 lg:p-4">
@@ -68,8 +68,8 @@ export const TransportView: React.FC = () => {
                       }`} />
                     </div>
                     <div className="min-w-0">
-                      <h3 className="text-white font-semibold text-sm lg:text-base truncate">{route.name}</h3>
-                      <p className="text-xs text-white/60">{route.bus} • {route.driver}</p>
+                      <h3 className="text-slate-800 font-semibold text-sm lg:text-base truncate">{route.name}</h3>
+                      <p className="text-xs text-slate-500">{route.bus} • {route.driver}</p>
                     </div>
                   </div>
 
@@ -84,22 +84,22 @@ export const TransportView: React.FC = () => {
 
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                   <div>
-                    <p className="text-xs text-white/60 mb-1">Location</p>
+                    <p className="text-xs text-slate-500 mb-1">Location</p>
                     <div className="flex items-center gap-1">
                       <MapPin className="w-3 h-3 text-[#2563EB]" />
-                      <p className="text-xs text-white truncate">{route.location}</p>
+                      <p className="text-xs text-slate-800 truncate">{route.location}</p>
                     </div>
                   </div>
                   <div>
-                    <p className="text-xs text-white/60 mb-1">ETA</p>
+                    <p className="text-xs text-slate-500 mb-1">ETA</p>
                     <div className="flex items-center gap-1">
                       <Clock className="w-3 h-3 text-[#F59E0B]" />
-                      <p className="text-xs text-white">{route.eta}</p>
+                      <p className="text-xs text-slate-800">{route.eta}</p>
                     </div>
                   </div>
                   <div>
-                    <p className="text-xs text-white/60 mb-1">Occupancy</p>
-                    <p className="text-xs text-white font-semibold">{route.students}/{route.capacity}</p>
+                    <p className="text-xs text-slate-500 mb-1">Occupancy</p>
+                    <p className="text-xs text-slate-800 font-semibold">{route.students}/{route.capacity}</p>
                   </div>
                   <div className="flex items-end">
                     <Button size="sm" variant="ghost" className="text-[#2563EB] hover:bg-[#2563EB]/10 h-8 text-xs w-full lg:w-auto">
@@ -116,7 +116,7 @@ export const TransportView: React.FC = () => {
         <div className="space-y-4 lg:space-y-6">
           {/* Recent Alerts */}
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Recent Alerts 🚨</h2>
+            <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Recent Alerts 🚨</h2>
             <div className="space-y-3">
               {recentAlerts.map((alert, idx) => (
                 <div key={idx} className="glass-card rounded-xl p-3">
@@ -125,9 +125,9 @@ export const TransportView: React.FC = () => {
                       alert.type === 'delay' ? 'text-[#F59E0B]' : 'text-[#F43F5E]'
                     }`} />
                     <div className="flex-1 min-w-0">
-                      <p className="text-white font-semibold text-sm">{alert.route}</p>
-                      <p className="text-xs text-white/60 mb-1">{alert.message}</p>
-                      <p className="text-xs text-white/40">{alert.time}</p>
+                      <p className="text-slate-800 font-semibold text-sm">{alert.route}</p>
+                      <p className="text-xs text-slate-500 mb-1">{alert.message}</p>
+                      <p className="text-xs text-slate-400">{alert.time}</p>
                     </div>
                   </div>
                 </div>
@@ -137,17 +137,17 @@ export const TransportView: React.FC = () => {
 
           {/* Quick Actions */}
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Quick Actions</h2>
+            <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Quick Actions</h2>
             <div className="space-y-2">
-              <Button className="w-full justify-start bg-[#2563EB]/20 hover:bg-[#2563EB]/30 text-white border border-[#2563EB]/30 text-sm">
+              <Button className="w-full justify-start bg-[#2563EB]/10 hover:bg-[#2563EB]/20 text-[#2563EB] border border-[#2563EB]/30 text-sm">
                 <Bus className="w-4 h-4 mr-2" />
                 Add New Route
               </Button>
-              <Button className="w-full justify-start bg-[#10B981]/20 hover:bg-[#10B981]/30 text-white border border-[#10B981]/30 text-sm">
+              <Button className="w-full justify-start bg-[#10B981]/10 hover:bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30 text-sm">
                 <MapPin className="w-4 h-4 mr-2" />
                 View All Routes
               </Button>
-              <Button className="w-full justify-start bg-[#F59E0B]/20 hover:bg-[#F59E0B]/30 text-white border border-[#F59E0B]/30 text-sm">
+              <Button className="w-full justify-start bg-[#F59E0B]/10 hover:bg-[#F59E0B]/20 text-[#D97706] border border-[#F59E0B]/30 text-sm">
                 <AlertTriangle className="w-4 h-4 mr-2" />
                 Send Alert (2)
               </Button>
@@ -156,8 +156,8 @@ export const TransportView: React.FC = () => {
 
           {/* Map Preview */}
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Live Map</h2>
-            <div className="aspect-square rounded-lg bg-gradient-to-br from-[#1B3A8C] to-[#0A1628] flex items-center justify-center">
+            <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Live Map</h2>
+            <div className="aspect-square rounded-lg bg-gradient-to-br from-[#DBEAFE] to-[#E0F2FE] flex items-center justify-center">
               <MapPin className="w-12 h-12 text-[#06B6D4] opacity-50" />
             </div>
             <Button className="w-full mt-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm">

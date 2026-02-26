@@ -32,10 +32,10 @@ export const TeachersView: React.FC = () => {
     <div className="p-4 lg:p-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           Teacher Management 👨‍🏫
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">Faculty performance and workload tracking</p>
+        <p className="text-slate-500 text-sm lg:text-base">Faculty performance and workload tracking</p>
       </div>
 
       {/* Stats */}
@@ -43,10 +43,10 @@ export const TeachersView: React.FC = () => {
         {stats.map((stat, idx) => (
           <div key={idx} className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
             <stat.icon className="w-6 h-6 lg:w-8 lg:h-8 mb-3" style={{ color: stat.color }} />
-            <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>
+            <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>
               {stat.value}
             </p>
-            <p className="text-xs text-white/60">{stat.label}</p>
+            <p className="text-xs text-slate-500">{stat.label}</p>
           </div>
         ))}
       </div>
@@ -55,12 +55,12 @@ export const TeachersView: React.FC = () => {
         {/* Teachers List */}
         <div className="lg:col-span-2 glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <div className="flex flex-col lg:flex-row gap-3 lg:items-center justify-between mb-4">
-            <h2 className="text-lg lg:text-xl font-semibold text-white">All Teachers</h2>
+            <h2 className="text-lg lg:text-xl font-semibold text-slate-800">All Teachers</h2>
             <div className="relative flex-1 lg:max-w-xs">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
               <Input 
                 placeholder="Search teachers..." 
-                className="pl-10 bg-white/5 border-white/10 text-white placeholder:text-white/40 text-sm"
+                className="pl-10 bg-slate-50 border-slate-200 text-slate-800 placeholder:text-slate-400 text-sm"
               />
             </div>
           </div>
@@ -70,12 +70,12 @@ export const TeachersView: React.FC = () => {
               <div key={teacher.id} className="glass-card rounded-xl p-3 lg:p-4">
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#F59E0B] flex items-center justify-center text-white font-bold text-sm lg:text-base flex-shrink-0">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#F59E0B] flex items-center justify-center text-slate-800 font-bold text-sm lg:text-base flex-shrink-0">
                       {teacher.name.split(' ').slice(0, 2).map(n => n[0]).join('')}
                     </div>
                     <div className="min-w-0">
-                      <h3 className="text-white font-semibold text-sm lg:text-base truncate">{teacher.name}</h3>
-                      <p className="text-xs text-white/60">{teacher.subject} • {teacher.experience}y exp • {teacher.students} students</p>
+                      <h3 className="text-slate-800 font-semibold text-sm lg:text-base truncate">{teacher.name}</h3>
+                      <p className="text-xs text-slate-500">{teacher.subject} • {teacher.experience}y exp • {teacher.students} students</p>
                     </div>
                   </div>
 
@@ -95,8 +95,8 @@ export const TeachersView: React.FC = () => {
 
                 <div className="mt-3">
                   <div className="flex justify-between mb-1 text-xs">
-                    <span className="text-white/60">Classes: {teacher.classes.join(', ')}</span>
-                    <span className="text-white">{teacher.performance}%</span>
+                    <span className="text-slate-500">Classes: {teacher.classes.join(', ')}</span>
+                    <span className="text-slate-800">{teacher.performance}%</span>
                   </div>
                   <Progress value={teacher.performance} className="h-2" />
                 </div>
@@ -109,7 +109,7 @@ export const TeachersView: React.FC = () => {
         <div className="space-y-4 lg:space-y-6">
           {/* Top Performers */}
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Top Performers 🏆</h2>
+            <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Top Performers 🏆</h2>
             <div className="space-y-3">
               {topPerformers.map((teacher, idx) => (
                 <div key={idx} className="glass-card rounded-xl p-3">
@@ -122,8 +122,8 @@ export const TeachersView: React.FC = () => {
                       {idx + 1}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-white font-semibold text-sm truncate">{teacher.name}</p>
-                      <p className="text-xs text-white/60">{teacher.subject}</p>
+                      <p className="text-slate-800 font-semibold text-sm truncate">{teacher.name}</p>
+                      <p className="text-xs text-slate-500">{teacher.subject}</p>
                     </div>
                   </div>
                   <div className="flex gap-2">
@@ -142,17 +142,17 @@ export const TeachersView: React.FC = () => {
 
           {/* Quick Actions */}
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Quick Actions</h2>
+            <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Quick Actions</h2>
             <div className="space-y-2">
-              <Button className="w-full justify-start bg-[#2563EB]/20 hover:bg-[#2563EB]/30 text-white border border-[#2563EB]/30 text-sm">
+              <Button className="w-full justify-start bg-[#2563EB]/10 hover:bg-[#2563EB]/20 text-[#2563EB] border border-[#2563EB]/30 text-sm">
                 <Users className="w-4 h-4 mr-2" />
                 Hire New Teacher
               </Button>
-              <Button className="w-full justify-start bg-[#10B981]/20 hover:bg-[#10B981]/30 text-white border border-[#10B981]/30 text-sm">
+              <Button className="w-full justify-start bg-[#10B981]/10 hover:bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30 text-sm">
                 <Award className="w-4 h-4 mr-2" />
                 Performance Review
               </Button>
-              <Button className="w-full justify-start bg-[#F59E0B]/20 hover:bg-[#F59E0B]/30 text-white border border-[#F59E0B]/30 text-sm">
+              <Button className="w-full justify-start bg-[#F59E0B]/10 hover:bg-[#F59E0B]/20 text-[#D97706] border border-[#F59E0B]/30 text-sm">
                 <Clock className="w-4 h-4 mr-2" />
                 Schedule Meeting
               </Button>

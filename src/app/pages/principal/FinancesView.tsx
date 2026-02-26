@@ -43,10 +43,10 @@ export const FinancesView: React.FC = () => {
     <div className="p-4 lg:p-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           Financial Management 💰
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">Revenue, expenses, and fee collection tracking</p>
+        <p className="text-slate-500 text-sm lg:text-base">Revenue, expenses, and fee collection tracking</p>
       </div>
 
       {/* Stats */}
@@ -61,10 +61,10 @@ export const FinancesView: React.FC = () => {
                 {stat.change}
               </Badge>
             </div>
-            <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>
+            <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>
               {stat.value}
             </p>
-            <p className="text-xs text-white/60">{stat.label}</p>
+            <p className="text-xs text-slate-500">{stat.label}</p>
           </div>
         ))}
       </div>
@@ -72,7 +72,7 @@ export const FinancesView: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
         {/* Revenue Chart */}
         <div className="lg:col-span-2 glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Revenue vs Expenses</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Revenue vs Expenses</h2>
           <ResponsiveContainer width="100%" height={300}>
             <AreaChart data={revenueData}>
               <defs>
@@ -85,15 +85,15 @@ export const FinancesView: React.FC = () => {
                   <stop offset="95%" stopColor="#F43F5E" stopOpacity={0}/>
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
               <XAxis dataKey="month" stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <YAxis stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: '#111827', 
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  backgroundColor: '#FFFFFF', 
+                  border: '1px solid #E2E8F0',
                   borderRadius: '8px',
-                  color: '#fff'
+                  color: '#1E293B'
                 }} 
               />
               <Area type="monotone" dataKey="revenue" stroke="#10B981" strokeWidth={2} fillOpacity={1} fill="url(#colorRevenue)" />
@@ -104,15 +104,15 @@ export const FinancesView: React.FC = () => {
 
         {/* Fee Collection by Class */}
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Fee Collection</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Fee Collection</h2>
           <div className="space-y-3">
             {feeCollection.map((cls) => {
               const percentage = (cls.collected / cls.total) * 100;
               return (
                 <div key={cls.class}>
                   <div className="flex justify-between mb-2">
-                    <span className="text-sm text-white font-medium">{cls.class}</span>
-                    <span className="text-sm text-white/60">{cls.collected}/{cls.total}</span>
+                    <span className="text-sm text-slate-800 font-medium">{cls.class}</span>
+                    <span className="text-sm text-slate-500">{cls.collected}/{cls.total}</span>
                   </div>
                   <Progress value={percentage} className="h-2 mb-1" />
                   {cls.pending > 0 && (
@@ -128,7 +128,7 @@ export const FinancesView: React.FC = () => {
       {/* Recent Transactions */}
       <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 mb-4">
-          <h2 className="text-lg lg:text-xl font-semibold text-white">Recent Transactions</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800">Recent Transactions</h2>
           <Button size="sm" className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white">
             <AlertCircle className="w-4 h-4 mr-2" />
             Send 47 Reminders
@@ -150,13 +150,13 @@ export const FinancesView: React.FC = () => {
                     )}
                   </div>
                   <div className="min-w-0">
-                    <p className="text-white font-semibold text-sm lg:text-base truncate">{txn.student}</p>
-                    <p className="text-xs text-white/60">{txn.date} {txn.method && `• ${txn.method}`}</p>
+                    <p className="text-slate-800 font-semibold text-sm lg:text-base truncate">{txn.student}</p>
+                    <p className="text-xs text-slate-500">{txn.date} {txn.method && `• ${txn.method}`}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <p className="text-lg lg:text-xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>
+                  <p className="text-lg lg:text-xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>
                     ₹{txn.amount.toLocaleString()}
                   </p>
                   <Badge className={`${

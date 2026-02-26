@@ -17,38 +17,34 @@ export const TopBar: React.FC<TopBarProps> = ({ greeting, name, role, avatarUrl 
 
   return (
     <div 
-      className="h-16 border-b border-white/10 px-6 flex items-center justify-between"
-      style={{
-        background: 'rgba(10, 15, 30, 0.8)',
-        backdropFilter: 'blur(10px)'
-      }}
+      className="h-16 border-b border-slate-200 px-6 flex items-center justify-between bg-white"
     >
       {/* Greeting */}
       <div>
-        <h2 className="text-lg font-semibold text-white">
+        <h2 className="text-lg font-semibold text-slate-800">
           {greeting}, {name} 👋
         </h2>
-        <p className="text-xs text-white/60">{role}</p>
+        <p className="text-xs text-slate-500">{role}</p>
       </div>
 
       {/* Search & Actions */}
       <div className="flex items-center gap-4">
         {/* Global Search */}
         <div className="relative w-96">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
           <Input
             placeholder="Ask ARIA anything..."
-            className="pl-10 bg-white/5 border-white/10 text-white placeholder:text-white/40"
+            className="pl-10 bg-slate-50 border-slate-200 text-slate-800 placeholder:text-slate-400"
           />
         </div>
 
         {/* Calendar */}
-        <button className="w-10 h-10 rounded-xl flex items-center justify-center text-white/60 hover:text-white hover:bg-white/5 transition-all">
+        <button className="w-10 h-10 rounded-xl flex items-center justify-center text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-all">
           <Calendar className="w-5 h-5" />
         </button>
 
         {/* Notifications */}
-        <button className="w-10 h-10 rounded-xl flex items-center justify-center text-white/60 hover:text-white hover:bg-white/5 transition-all relative">
+        <button className="w-10 h-10 rounded-xl flex items-center justify-center text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-all relative">
           <Bell className="w-5 h-5" />
           <Badge 
             className="absolute -top-1 -right-1 w-5 h-5 p-0 flex items-center justify-center bg-[#F43F5E] text-white text-xs"
@@ -58,7 +54,7 @@ export const TopBar: React.FC<TopBarProps> = ({ greeting, name, role, avatarUrl 
         </button>
 
         {/* User Avatar */}
-        <div className="flex items-center gap-3 pl-3 border-l border-white/10">
+        <div className="flex items-center gap-3 pl-3 border-l border-slate-200">
           <Avatar>
             <AvatarImage src={avatarUrl} />
             <AvatarFallback className="bg-gradient-to-br from-[#2563EB] to-[#06B6D4] text-white">
@@ -70,11 +66,11 @@ export const TopBar: React.FC<TopBarProps> = ({ greeting, name, role, avatarUrl 
         {/* Logout */}
         <button 
           onClick={() => navigate('/')}
-          className="w-10 h-10 rounded-xl flex items-center justify-center text-white/60 hover:text-[#F43F5E] hover:bg-[#F43F5E]/10 transition-all group relative"
+          className="w-10 h-10 rounded-xl flex items-center justify-center text-slate-500 hover:text-[#F43F5E] hover:bg-[#F43F5E]/10 transition-all group relative"
           title="Logout"
         >
           <LogOut className="w-5 h-5" />
-          <div className="absolute top-full mt-2 px-3 py-2 bg-[#111827] text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">
+          <div className="absolute top-full mt-2 px-3 py-2 bg-slate-800 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50 shadow-lg">
             Logout
           </div>
         </button>

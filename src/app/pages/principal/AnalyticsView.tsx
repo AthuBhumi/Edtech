@@ -48,10 +48,10 @@ export const AnalyticsView: React.FC = () => {
     <div className="p-4 lg:p-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           School Analytics 📊
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">Comprehensive performance metrics and insights</p>
+        <p className="text-slate-500 text-sm lg:text-base">Comprehensive performance metrics and insights</p>
       </div>
 
       {/* Key Metrics */}
@@ -67,10 +67,10 @@ export const AnalyticsView: React.FC = () => {
                 {metric.change}
               </Badge>
             </div>
-            <p className="text-xl lg:text-2xl font-bold text-white mb-1" style={{ fontFamily: 'var(--font-mono)' }}>
+            <p className="text-xl lg:text-2xl font-bold text-slate-800 mb-1" style={{ fontFamily: 'var(--font-mono)' }}>
               {metric.value}
             </p>
-            <p className="text-xs text-white/60">{metric.label}</p>
+            <p className="text-xs text-slate-500">{metric.label}</p>
           </div>
         ))}
       </div>
@@ -79,7 +79,7 @@ export const AnalyticsView: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-6">
         {/* Enrollment Trend */}
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Enrollment Trend</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Enrollment Trend</h2>
           <ResponsiveContainer width="100%" height={250}>
             <AreaChart data={enrollmentData}>
               <defs>
@@ -88,15 +88,15 @@ export const AnalyticsView: React.FC = () => {
                   <stop offset="95%" stopColor="#2563EB" stopOpacity={0}/>
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
               <XAxis dataKey="month" stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <YAxis stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: '#111827', 
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  backgroundColor: '#FFFFFF', 
+                  border: '1px solid #E2E8F0',
                   borderRadius: '8px',
-                  color: '#fff'
+                  color: '#1E293B'
                 }} 
               />
               <Area type="monotone" dataKey="students" stroke="#2563EB" strokeWidth={2} fillOpacity={1} fill="url(#colorStudents)" />
@@ -107,18 +107,18 @@ export const AnalyticsView: React.FC = () => {
 
         {/* Subject Performance */}
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Subject Performance</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Subject Performance</h2>
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={subjectPerformance}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
               <XAxis dataKey="subject" stroke="#9CA3AF" tick={{ fontSize: 11 }} />
               <YAxis stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: '#111827', 
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  backgroundColor: '#FFFFFF', 
+                  border: '1px solid #E2E8F0',
                   borderRadius: '8px',
-                  color: '#fff'
+                  color: '#1E293B'
                 }} 
               />
               <Bar dataKey="avgScore" fill="#2563EB" radius={[8, 8, 0, 0]} />
@@ -129,18 +129,18 @@ export const AnalyticsView: React.FC = () => {
 
         {/* Weekly Attendance */}
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Weekly Attendance Trend</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Weekly Attendance Trend</h2>
           <ResponsiveContainer width="100%" height={250}>
             <LineChart data={attendanceData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
               <XAxis dataKey="day" stroke="#9CA3AF" tick={{ fontSize: 12 }} />
               <YAxis stroke="#9CA3AF" domain={[85, 100]} tick={{ fontSize: 12 }} />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: '#111827', 
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  backgroundColor: '#FFFFFF', 
+                  border: '1px solid #E2E8F0',
                   borderRadius: '8px',
-                  color: '#fff'
+                  color: '#1E293B'
                 }} 
               />
               <Line type="monotone" dataKey="attendance" stroke="#10B981" strokeWidth={3} dot={{ fill: '#10B981', r: 5 }} />
@@ -150,7 +150,7 @@ export const AnalyticsView: React.FC = () => {
 
         {/* Grade Distribution */}
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-          <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Grade Distribution</h2>
+          <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Grade Distribution</h2>
           <ResponsiveContainer width="100%" height={250}>
             <PieChart>
               <Pie
@@ -168,10 +168,10 @@ export const AnalyticsView: React.FC = () => {
               </Pie>
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: '#111827', 
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  backgroundColor: '#FFFFFF', 
+                  border: '1px solid #E2E8F0',
                   borderRadius: '8px',
-                  color: '#fff'
+                  color: '#1E293B'
                 }} 
               />
             </PieChart>

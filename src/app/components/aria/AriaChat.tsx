@@ -82,7 +82,7 @@ export const AriaChat: React.FC<AriaChatProps> = ({
               className={`rounded-2xl px-4 py-3 max-w-[85%] ${
                 message.role === 'user'
                   ? 'bg-[#2563EB] text-white'
-                  : 'glass-card text-white border-l-2 border-[#06B6D4]'
+                  : 'bg-white/10 text-white border-l-2 border-[#06B6D4]'
               }`}
             >
               {message.role === 'aria' ? (
@@ -98,7 +98,7 @@ export const AriaChat: React.FC<AriaChatProps> = ({
         {isTyping && (
           <div className="flex gap-3">
             <AriaOrb size="sm" animated={true} />
-            <div className="glass-card rounded-2xl px-4 py-3 border-l-2 border-[#06B6D4]">
+            <div className="bg-white/10 rounded-2xl px-4 py-3 border-l-2 border-[#06B6D4]">
               <div className="flex items-center gap-1">
                 <span className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
                 <span className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
@@ -118,7 +118,7 @@ export const AriaChat: React.FC<AriaChatProps> = ({
             <button
               key={idx}
               onClick={() => onSendMessage(reply)}
-              className="px-3 py-1 text-xs rounded-full glass-card hover:bg-white/10 transition-all text-white/80 hover:text-white"
+              className="px-3 py-1 text-xs rounded-full bg-white/10 border border-white/15 hover:bg-white/20 transition-all text-white/80 hover:text-white"
             >
               {reply}
             </button>

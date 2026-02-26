@@ -26,42 +26,42 @@ export const LibraryView: React.FC = () => {
   return (
     <div className="p-4 lg:p-6">
       <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           Library 📖
         </h1>
-        <p className="text-white/60 text-sm lg:text-base">Browse and borrow books</p>
+        <p className="text-slate-500 text-sm lg:text-base">Browse and borrow books</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <BookOpen className="w-6 h-6 lg:w-8 lg:h-8 text-[#2563EB] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>2</p>
-          <p className="text-xs text-white/60">Books Borrowed</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>2</p>
+          <p className="text-xs text-slate-500">Books Borrowed</p>
         </div>
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <Clock className="w-6 h-6 lg:w-8 lg:h-8 text-[#F59E0B] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>5</p>
-          <p className="text-xs text-white/60">Days Until Due</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>5</p>
+          <p className="text-xs text-slate-500">Days Until Due</p>
         </div>
         <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
           <Star className="w-6 h-6 lg:w-8 lg:h-8 text-[#10B981] mb-3" />
-          <p className="text-xl lg:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>24</p>
-          <p className="text-xs text-white/60">Books Read</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-mono)' }}>24</p>
+          <p className="text-xs text-slate-500">Books Read</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
         <div className="lg:col-span-2 space-y-4">
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg lg:text-xl font-semibold text-white mb-4">Currently Borrowed</h2>
+            <h2 className="text-lg lg:text-xl font-semibold text-slate-800 mb-4">Currently Borrowed</h2>
             <div className="space-y-3">
               {borrowedBooks.map((book, idx) => (
                 <div key={idx} className="glass-card rounded-xl p-4">
                   <div className="flex items-start gap-3">
                     <div className="text-4xl">{book.cover}</div>
                     <div className="flex-1">
-                      <h3 className="text-white font-semibold mb-1">{book.title}</h3>
-                      <p className="text-sm text-white/60 mb-2">{book.author}</p>
+                      <h3 className="text-slate-800 font-semibold mb-1">{book.title}</h3>
+                      <p className="text-sm text-slate-500 mb-2">{book.author}</p>
                       <div className="flex items-center gap-2 flex-wrap">
                         <Badge className={`${
                           book.daysLeft <= 5 ? 'bg-[#F43F5E]/20 text-[#F43F5E]' : 'bg-[#10B981]/20 text-[#10B981]'
@@ -84,13 +84,13 @@ export const LibraryView: React.FC = () => {
 
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg lg:text-xl font-semibold text-white">Search Books</h2>
+              <h2 className="text-lg lg:text-xl font-semibold text-slate-800">Search Books</h2>
             </div>
             <div className="relative mb-4">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
               <Input 
                 placeholder="Search by title, author, or category..." 
-                className="pl-10 bg-white/5 border-white/10 text-white placeholder:text-white/40"
+                className="pl-10 bg-slate-50 border-slate-200 text-slate-800 placeholder:text-slate-400"
               />
             </div>
             <div className="space-y-3">
@@ -98,8 +98,8 @@ export const LibraryView: React.FC = () => {
                 <div key={idx} className="glass-card rounded-xl p-3">
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex-1">
-                      <h4 className="text-white font-semibold text-sm mb-1">{book.title}</h4>
-                      <p className="text-xs text-white/60 mb-2">{book.author}</p>
+                      <h4 className="text-slate-800 font-semibold text-sm mb-1">{book.title}</h4>
+                      <p className="text-xs text-slate-500 mb-2">{book.author}</p>
                       <div className="flex items-center gap-2 flex-wrap">
                         <Badge className="bg-[#7C3AED]/20 text-[#7C3AED] border-none text-xs">
                           {book.category}
@@ -133,16 +133,16 @@ export const LibraryView: React.FC = () => {
 
         <div className="space-y-4">
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg font-semibold text-white mb-4">Most Popular 🔥</h2>
+            <h2 className="text-lg font-semibold text-slate-800 mb-4">Most Popular 🔥</h2>
             <div className="space-y-3">
               {popularBooks.map((book, idx) => (
                 <div key={idx} className="glass-card rounded-xl p-3">
-                  <h4 className="text-white font-semibold text-sm mb-1">{book.title}</h4>
+                  <h4 className="text-slate-800 font-semibold text-sm mb-1">{book.title}</h4>
                   <div className="flex items-center justify-between">
                     <Badge className="bg-[#7C3AED]/20 text-[#7C3AED] border-none text-xs">
                       {book.category}
                     </Badge>
-                    <span className="text-xs text-white/60">{book.borrowed} borrowed</span>
+                    <span className="text-xs text-slate-500">{book.borrowed} borrowed</span>
                   </div>
                 </div>
               ))}
@@ -150,13 +150,13 @@ export const LibraryView: React.FC = () => {
           </div>
 
           <div className="glass-card rounded-xl lg:rounded-2xl p-4 lg:p-6">
-            <h2 className="text-lg font-semibold text-white mb-4">Reading Goals</h2>
+            <h2 className="text-lg font-semibold text-slate-800 mb-4">Reading Goals</h2>
             <div className="glass-card rounded-xl p-4 mb-3">
-              <p className="text-sm text-white/60 mb-2">Monthly Goal</p>
-              <p className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-mono)' }}>
+              <p className="text-sm text-slate-500 mb-2">Monthly Goal</p>
+              <p className="text-2xl font-bold text-slate-800 mb-2" style={{ fontFamily: 'var(--font-mono)' }}>
                 4/5 Books
               </p>
-              <div className="w-full bg-white/10 rounded-full h-2">
+              <div className="w-full bg-slate-100 rounded-full h-2">
                 <div className="bg-[#10B981] h-2 rounded-full" style={{ width: '80%' }}></div>
               </div>
             </div>
